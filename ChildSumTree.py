@@ -17,11 +17,12 @@ class ChildSumTreeLSTMCell(tf.contrib.rnn.BasicLSTMCell):
       num_units: int, The number of units in the LSTM cell.
       keep_prob: Keep probability for recurrent dropout.
     """
-    super(BinaryTreeLSTMCell, self).__init__(num_units)
+    super(ChildSumTreeLSTMCell, self).__init__(num_units, state_is_tuple=True, reuse=False)
     self._keep_prob = keep_prob
 
   def __call__(self, inputs, state, scope=None):
     with tf.variable_scope(scope or type(self).__name__):
+      super(ChildSumTreeLSTMCell, self).__call__(inputs, state[0])
       c_list = []
       h_list = []
       h_sum = None 
@@ -37,28 +38,28 @@ class ChildSumTreeLSTMCell(tf.contrib.rnn.BasicLSTMCell):
       kernel_i, kernel_f, kernel_j, kernel_o = tf.split(value=self._kernel, num_or_size_splits=4, axis=1)
       bias_i, bias_f, bias_j, bias_o = tf.split(value=self._bias, num_or_size_splits=4, axis=0)
       
-      one = constant_op.constant(1, dtype=dtypes.int32)
+      one = tf.constant(1, dtype=tf.int32)
 
-      input_h_sum_concat = array_ops.concat([inputs, h_sum], 1)
+      input_h_sum_concat = tf.concat([inputs, h_sum], 1)
       
-      gate_inputs_i = math_ops.matmul(input_h_sum_concat, kernel_i)
-      gate_inputs_i = nn_ops.bias_add(gate_inputs_i, bias_i)
+      gate_inputs_i = tf.matmul(input_h_sum_concat, kernel_i)
+      gate_inputs_i = tf.nn.bias_add(gate_inputs_i, bias_i)
 
-      gate_inputs_j = math_ops.matmul(input_h_sum_concat, kernel_j)
-      gate_inputs_j = nn_ops.bias_add(gate_inputs_j, bias_j)
+      gate_inputs_j = tf.matmul(input_h_sum_concat, kernel_j)
+      gate_inputs_j = tf.nn.bias_add(gate_inputs_j, bias_j)
 
-      gate_inputs_o = math_ops.matmul(input_h_sum_concat, kernel_o)
-      gate_inputs_o = nn_ops.bias_add(gate_inputs_o, bias_o)
+      gate_inputs_o = tf.matmul(input_h_sum_concat, kernel_o)
+      gate_inputs_o = tf.nn.bias_add(gate_inputs_o, bias_o)
 
-      add = math_ops.add
-      multiply = math_ops.multiply
-      sigmoid = math_ops.sigmoid
-      forget_bias_tensor = constant_op.constant(self._forget_bias, dtype=f.dtype)
+      add = tf.add
+      multiply = tf.multiply
+      sigmoid = tf.sigmoid
+      forget_bias_tensor = tf.constant(self._forget_bias, dtype=gate_inputs_i.dtype)
       
       c_f_sum = None
       for k in range(len(c_list)):
-        gate_inputs_f_k = math_ops.matmul(array_ops.concat([inputs, h_list[k]], 1), kernel_f)
-        gate_inputs_f_k = nn_ops.bias_add(gate_inputs_f_k, bias_f)
+        gate_inputs_f_k = tf.matmul(tf.concat([inputs, h_list[k]], 1), kernel_f)
+        gate_inputs_f_k = tf.nn.bias_add(gate_inputs_f_k, bias_f)
         if c_f_sum is None: 
           c_f_sum = multiply(sigmoid(add(gate_inputs_f_k, forget_bias_tensor)), c_list[k])
         else:
