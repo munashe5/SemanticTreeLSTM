@@ -1,0 +1,54 @@
+Input: A group of kids is playing in a yard and an old man is standing in the background
+Parse:
+playing VBG ROOT
+ +-- group NN nsubj
+ |   +-- A DT det
+ |   +-- of IN prep
+ |       +-- kids NNS pobj
+ +-- is VBZ aux
+ +-- in IN prep
+ |   +-- yard NN pobj
+ |       +-- a DT det
+ +-- and CC cc
+ +-- standing VBG conj
+     +-- man NN nsubj
+     |   +-- an DT det
+     |   +-- old JJ amod
+     +-- is VBZ aux
+     +-- in IN prep
+         +-- background NN pobj
+             +-- the DT det
+Input: A group of children is playing in the house and there is no man standing in the background
+Parse:
+playing VBG ROOT
+ +-- group NN nsubj
+ |   +-- A DT det
+ |   +-- of IN prep
+ |       +-- children NNS pobj
+ +-- is VBZ aux
+ +-- in IN prep
+ |   +-- house NN pobj
+ |       +-- the DT det
+ +-- and CC cc
+ +-- is VBZ conj
+     +-- there EX expl
+     +-- man NN nsubj
+         +-- no DT det
+         +-- standing VBG partmod
+             +-- in IN prep
+                 +-- background NN pobj
+                     +-- the DT det
+Input: The young boys are playing outdoors and the man is smiling nearby
+Parse:
+playing VBG ROOT
+ +-- boys NNS nsubj
+ |   +-- The DT det
+ |   +-- young JJ amod
+ +-- are VBP aux
+ +-- outdoors RB advmod
+ +-- and CC cc
+ +-- smiling VBG conj
+     +-- man NN nsubj
+     |   +-- the DT det
+     +-- is VBZ aux
+     +-- nearby RB advmod
