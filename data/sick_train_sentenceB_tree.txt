@@ -92,12 +92,12 @@ playing VBG ROOT
              +-- the DT det
 Input: Two dogs are wrestling and hugging
 Parse:
-Two CD ROOT
- +-- wrestling VBG dep
-     +-- dogs NNS nsubj
-     +-- are VBP aux
-     +-- and CC cc
-     +-- hugging VBG conj
+wrestling VBG ROOT
+ +-- dogs NNS nsubj
+ |   +-- Two CD ROOT
+ +-- are VBP aux
+ +-- and CC cc
+ +-- hugging VBG conj
 Input: Two dogs are fighting
 Parse:
 fighting VBG ROOT
@@ -106,12 +106,12 @@ fighting VBG ROOT
  +-- are VBP aux
 Input: Two dogs are wrestling and hugging
 Parse:
-Two CD ROOT
- +-- wrestling VBG dep
-     +-- dogs NNS nsubj
-     +-- are VBP aux
-     +-- and CC cc
-     +-- hugging VBG conj
+wrestling VBG ROOT
+ +-- dogs NNS nsubj
+ |   +-- Two CD ROOT
+ +-- are VBP aux
+ +-- and CC cc
+ +-- hugging VBG conj
 Input: A person in a black jacket is doing tricks on a motorbike
 Parse:
 doing VBG ROOT
@@ -246,10 +246,15 @@ sparring VBG ROOT
          +-- kickboxing NN nn
 Input: Two people are kickboxing and spectators are not watching
 Parse:
-watching VBG ROOT
- +-- spectators NNS nsubj
- +-- are VBP aux
- +-- not RB neg
+kickboxing VBG ROOT
+ +-- people NNS nsubj
+ |   +-- Two CD num
+ +-- are VBP cop
+ +-- and CC cc
+ +-- watching VBG conj
+     +-- spectators NNS nsubj
+     +-- are VBP aux
+     +-- not RB neg
 Input: Three kids are jumping in the leaves
 Parse:
 jumping VBG ROOT
@@ -1103,12 +1108,17 @@ is VBZ ROOT
              +-- white JJ amod
 Input: Three Asian kids are dancing and there is no man looking
 Parse:
-is VBZ ROOT
+dancing VBG ROOT
+ +-- kids NNS nsubj
+ |   +-- Three CD num
+ |   +-- Asian JJ amod
+ +-- are VBP aux
  +-- and CC cc
- +-- there EX expl
- +-- man NN nsubj
-     +-- no DT det
-     +-- looking VBG amod
+ +-- is VBZ conj
+     +-- there
+     +-- man NN nsubj
+     |   +-- no DT neg
+     +-- looking VBG vmod
 Input: An Asian man is dancing and three kids are looking
 Parse:
 dancing VBG ROOT
@@ -5114,7 +5124,8 @@ raising VBG ROOT
  |           +-- , , punct
  +-- is VBZ aux
  +-- arm NN dobj
-     +-- her PRP$ poss
+ |   +-- her PRP$ poss
+ +-- . . punct
 Input: A girl in a uniform , which is blue , is raising her arm .
 Parse:
 raising VBG ROOT
@@ -5130,7 +5141,8 @@ raising VBG ROOT
  |           +-- , , punct
  +-- is VBZ aux
  +-- arm NN dobj
-     +-- her PRP$ poss
+ |   +-- her PRP$ poss
+ +-- . . punct
 Input: Some cheers are being performed by the girl in the blue and white uniform
 Parse:
 performed VBN ROOT
@@ -5174,7 +5186,8 @@ raising VBG ROOT
  |           +-- , , punct
  +-- is VBZ aux
  +-- arm NN dobj
-     +-- her PRP$ poss
+ |   +-- her PRP$ poss
+ +-- . . punct
 Input: A girl in a uniform , which is blue , is lowering her arm
 Parse:
 lowering VBG ROOT
@@ -17325,7 +17338,10 @@ is VBZ ROOT
 Input: Paper and scissors both cut
 Parse:
 cut VBD ROOT
- +-- both DT nsubj
+ +-- Paper NN nsubj
+     +-- and CC cc
+     +-- scissors NN conj
+     +-- both DT dep
 Input: Some paper is being cut
 Parse:
 cut VBN ROOT
@@ -17599,13 +17615,19 @@ handling VBG ROOT
      +-- a DT det
 Input: Four young men are exploding and a car is standing still behind them
 Parse:
-standing VBG ROOT
- +-- car NN nsubj
- |   +-- a DT det
- +-- is VBZ aux
- +-- still RB advmod
- +-- behind IN prep
-     +-- them PRP pobj
+exploding VBG ROOT
+ +-- men NNS nsubj
+ |   +-- Four CD num
+ |   +-- young JJ amod
+ +-- are VBP aux
+ +-- and CC cc
+ +-- standing VBG conj
+     +-- still RB advmod
+     +-- car NN nsubj
+     |   +-- a DT det
+     +-- is VBZ aux
+     +-- behind IN prep
+         +-- them PRP pobj
 Input: The boys are standing in front of the burning car
 Parse:
 standing VBG ROOT
@@ -17909,7 +17931,11 @@ putting VBG ROOT
  +-- on IN prt
 Input: The woman is removing make-up
 Parse:
-make-up . ROOT
+removing VBG ROOT
+ +-- woman NN nsubj
+ |   +-- The DT det
+ +-- is VBZ aux
+ +-- make-up RP dobj
 Input: The woman is putting make-up on
 Parse:
 putting VBG ROOT
@@ -21514,6 +21540,7 @@ Input: Two women are not dancing
 Parse:
 dancing VBG ROOT
  +-- women NNS nsubj
+ |   +-- Two CD num
  +-- are VBP aux
  +-- not RB neg
 Input: A couple of policewomen are singing karaoke
@@ -25507,11 +25534,13 @@ mowing VBG ROOT
      +-- the DT det
 Input: There is no guy mowing the lawn
 Parse:
-guy NN ROOT
- +-- no DT det
- +-- mowing VBG dep
-     +-- lawn NN dobj
-         +-- the DT det
+is VBZ ROOT
+ +-- There DT expl
+ +-- guy NN nsubj
+     +-- no DT det
+     +-- mowing VBG vmod
+         +-- lawn NN dobj
+             +-- the DT det
 Input: A man is mowing grass
 Parse:
 mowing VBG ROOT
@@ -36118,13 +36147,15 @@ parking VBG ROOT
          +-- small JJ amod
 Input: There is no blonde lady looking at a tower
 Parse:
-lady NN ROOT
- +-- no DT det
- +-- blonde JJ amod
- +-- looking VBG partmod
-     +-- at IN prep
-         +-- tower NN pobj
-             +-- a DT det
+is VBZ ROOT
+ +-- There EX expl
+ +-- lady NN nsubj
+     +-- no DT det
+     +-- blonde JJ amod
+     +-- looking VBG partmod
+         +-- at IN prep
+             +-- tower NN dobj
+                 +-- a DT det
 Input: The woman is looking at the view of a city
 Parse:
 looking VBG ROOT
@@ -36149,13 +36180,15 @@ looking VBG ROOT
          +-- a DT det
 Input: There is no blonde lady looking at a tower
 Parse:
-lady NN ROOT
- +-- no DT det
- +-- blonde JJ amod
- +-- looking VBG partmod
-     +-- at IN prep
-         +-- tower NN pobj
-             +-- a DT det
+is VBZ ROOT
+ +-- There EX expl
+ +-- lady NN nsubj
+     +-- no DT det
+     +-- blonde JJ amod
+     +-- looking VBG partmod
+         +-- at IN prep
+             +-- tower NN dobj
+                 +-- a DT det
 Input: A woman is looking at the view of a city
 Parse:
 looking VBG ROOT
@@ -39840,13 +39873,15 @@ holding VBG ROOT
      +-- fur NN nn
 Input: There is no Asian woman holding a fur scarf
 Parse:
-woman NN ROOT
- +-- no DT det
- +-- Asian JJ amod
- +-- holding VBG partmod
-     +-- scarf NN dobj
-         +-- a DT det
-         +-- fur NN nn
+is VBZ ROOT
+ +-- There EX expl
+ +-- woman NN nsubj
+     +-- no DT det
+     +-- Asian JJ amod
+     +-- holding VBG partmod
+         +-- scarf NN dobj
+             +-- a DT det
+             +-- fur JJ amod
 Input: An elegant woman is inside a crowd of people and is looking down
 Parse:
 crowd NN ROOT
@@ -53647,12 +53682,17 @@ dancing VBG ROOT
      +-- is VBZ aux
 Input: Three Asian kids are dancing and there is no man looking
 Parse:
-is VBZ ROOT
+dancing VBG ROOT
+ +-- kids NNS nsubj
+ |   +-- Three CD num
+ |   +-- Asian JJ amod
+ +-- are VBP aux
  +-- and CC cc
- +-- there EX expl
- +-- man NN nsubj
-     +-- no DT det
-     +-- looking VBG amod
+ +-- is VBZ conj
+     +-- there
+     +-- man NN nsubj
+     |   +-- no DT neg
+     +-- looking VBG vmod
 Input: The children of a family are playing and waiting
 Parse:
 playing VBG ROOT
@@ -54921,10 +54961,14 @@ looking VBG ROOT
          +-- the DT det
 Input: A blond girl waves while she is riding
 Parse:
-riding VBG ROOT
- +-- while IN mark
- +-- she PRP nsubj
- +-- is VBZ aux
+waves VBG ROOT
+ +-- girl NN nsubj
+ |   +-- A DT det
+ |   +-- blond JJ amod
+ +-- riding VBG advcl
+     +-- while IN mark
+     +-- she PRP nsubj
+     +-- is VBZ aux
 Input: A woman is surfing
 Parse:
 surfing VBG ROOT
@@ -56836,7 +56880,7 @@ carrying VBG ROOT
  |   +-- black JJ amod
  +-- in IN prep
  |   +-- basket NN pobj
- |       +-- A DT det
+ |       +-- a DT det
  +-- in IN prep
  |   +-- mouth NN pobj
  |       +-- its PRP$ poss
@@ -57450,8 +57494,9 @@ are VBZ ROOT
  |   +-- clothes NNS dobj
  |       +-- , , punct
  +-- provides VBP rcmod
-     +-- which WDT nsubj
-     +-- camouflage NN dobj
+ |   +-- which WDT nsubj
+ |   +-- camouflage NN dobj
+ +-- . . punct
 Input: Two people are in the snow holding two dogs with golden coats
 Parse:
 people NNS ROOT
@@ -58027,7 +58072,8 @@ raising VBG ROOT
  |           +-- , , punct
  +-- is VBZ aux
  +-- arm NN dobj
-     +-- her PRP$ poss
+|   +-- her PRP$ poss
+ +-- . . punct
 Input: The girl in the blue and white uniform is n't cheering
 Parse:
 cheering VBG ROOT
@@ -60638,11 +60684,13 @@ frying VBG ROOT
  +-- food NN dobj
 Input: There is no man frying a tortilla
 Parse:
-man NN ROOT
- +-- no DT det
- +-- frying VBG dep
-     +-- tortilla NN dobj
-         +-- a DT det
+is VBZ ROOT
+ +-- There EX expl
+ +-- man NN nsubj
+     +-- no DT det
+     +-- frying VBG partmod
+         +-- tortilla NN dobj
+             +-- a DT det
 Input: A man is spanking a boy with a plastic sword
 Parse:
 spanking VBG ROOT
@@ -62171,8 +62219,10 @@ pouring VBG ROOT
          +-- few JJ amod
 Input: Few men like pouring tomato oil
 Parse:
-like IN ROOT
- +-- pouring VBG pcomp
+like VBG ROOT
+ +-- men NN nsubj
+ |   +-- Few JJ amod
+ +-- pouring VBG xcomp
      +-- oil NN dobj
          +-- tomato NN nn
 Input: The man is pouring some oil on the tomatoes
@@ -63684,7 +63734,7 @@ singing VBG ROOT
  +-- band NN nsubj
  |   +-- The DT det
  +-- is VBZ aux
-Input: A woman is putting on some makeup carefully ,
+Input: A woman is putting on some makeup carefully
 Parse:
 putting VBG ROOT
  +-- woman NN nsubj
@@ -63692,8 +63742,8 @@ putting VBG ROOT
  +-- is VBZ aux
  +-- on RP prt
  +-- makeup NN dobj
+ |   +-- some DT det
  +-- carefully RB advmod
- +-- , , punct
 Input: A woman is putting on makeup carefully
 Parse:
 putting VBG ROOT
@@ -64292,14 +64342,16 @@ driven VBN ROOT
  +-- away RP prt
 Input: There is no white car being driven by the man
 Parse:
-car NN ROOT
- +-- no DT det
- +-- white JJ amod
- +-- driven VBN partmod
-     +-- being VBG auxpass
-     +-- by IN prep
-         +-- man NN pobj
-             +-- the DT det
+is VBZ ROOT
+ +-- There EX expl
+ +-- car NN nsubj
+     +-- no DT det
+     +-- white JJ amod
+     +-- driven VBN partmod
+         +-- being VBG auxpass
+         +-- by IN prep
+             +-- man NN pobj
+                 +-- the DT det
 Input: The interviewer is granting a break to the man
 Parse:
 granting VBG ROOT
