@@ -201,10 +201,15 @@ dunking VBG ROOT
          +-- background NN pobj
 Input: Two people are kickboxing and spectators are not watching
 Parse:
-watching VBG ROOT
- +-- spectators NNS nsubj
- +-- are VBP aux
- +-- not RB neg
+kickboxing VBG ROOT
+ +-- people NNS nsubj
+ |   +-- Two CD num
+ +-- are VBP cop
+ +-- and CC cc
+ +-- watching VBG conj
+     +-- spectators NNS nsubj
+     +-- are VBP aux
+     +-- not RB neg
 Input: Two young women are sparring in a kickboxing fight
 Parse:
 sparring VBG ROOT
@@ -2421,10 +2426,14 @@ surfing VBG ROOT
          +-- a DT det
 Input: A blond girl waves while she is riding
 Parse:
-riding VBG ROOT
- +-- while IN mark
- +-- she PRP nsubj
- +-- is VBZ aux
+waves VBG ROOT
+ +-- girl NN nsubj
+ |   +-- A DT det
+ |   +-- blond JJ amod
+ +-- riding VBG advcl
+     +-- while IN mark
+     +-- she PRP nsubj
+     +-- is VBZ aux
 Input: Two children and an adult are standing next to a tree limb
 Parse:
 standing VBG ROOT
@@ -3522,9 +3531,20 @@ launching VBG ROOT
      +-- pool NN pobj
          +-- a DT det
          +-- swimming NN nn
-Input: A father is in the swimming pool during his daughters launch
+Input: A father is in the swimming pool during his daughter's launch
 Parse:
-launch NN ROOT
+is VBZ ROOT
+ +-- father NN nsubj
+ |   +-- A DT det
+ +-- in IN prep
+ |   +-- pool NN pobj
+ |       +-- the DT det
+ |       +-- swimming NN nn
+ +-- during IN prep
+     +-- launch NN pobj
+         +-- daughter NN poss
+             +-- his PRP$ poss
+             +-- 's POS possessive
 Input: The man is tossing a kid into the swimming pool that is near the ocean
 Parse:
 tossing VBG ROOT
@@ -3595,9 +3615,20 @@ tossing VBG ROOT
          +-- near IN prep
              +-- man NN pobj
                  +-- the DT det
-Input: A father is in the swimming pool during his daughters launch
+Input: A father is in the swimming pool during his daughter's launch
 Parse:
-launch NN ROOT
+is VBZ ROOT
+ +-- father NN nsubj
+ |   +-- A DT det
+ +-- in IN prep
+ |   +-- pool NN pobj
+ |       +-- the DT det
+ |       +-- swimming NN nn
+ +-- during IN prep
+     +-- launch NN pobj
+         +-- daughter NN poss
+             +-- his PRP$ poss
+             +-- 's POS possessive
 Input: A father is launching the daughter in a swimming pool
 Parse:
 launching VBG ROOT
@@ -3759,7 +3790,22 @@ climbing VBG ROOT
          +-- indoors RB advmod
 Input: A child is indoors watching a program about some young climbers on a rock wall .
 Parse:
-. . ROOT
+watching VBG ROOT
+ +-- child NN nsubj
+ |   +-- A DT det
+ +-- is VBZ aux
+ +-- indoors RB advmod
+ +-- program
+ |   +-- a DT det
+ |   +-- about IN prep
+ |       +-- climbers NNS pobj
+ |           +-- some DT det
+ |           +-- young JJ amod
+ |           +-- on IN prep
+ |               +-- wall NN pobj
+ |                   +-- a DT det
+ |                   +-- rock NN nn
+ +-- . . punct
 Input: One young boy is climbing a wall made of rock
 Parse:
 climbing VBG ROOT
@@ -4019,7 +4065,22 @@ dog NN ROOT
          +-- a DT det
 Input: A dog in the backyard is carrying black fur in a basket in its mouth .
 Parse:
-. . ROOT
+carrying VBG ROOT
+ +-- dog NN nsubj
+ |   +-- A DT det
+ |   +-- in IN prep
+ |       +-- backyard NN pobj
+ |           +-- the DT det
+ +-- is VBZ aux
+ +-- fur NN dobj
+ |   +-- black JJ amod
+ +-- in IN prep
+ |   +-- basket NN pobj
+ |       +-- a DT det
+ +-- in IN prep
+ |   +-- mouth NN pobj
+ |       +-- its PRP$ poss
+ +-- . . punct
 Input: A dog which is furry and black is in a back yard and is carrying a basket in its mouth
 Parse:
 is VBZ ROOT
@@ -4889,7 +4950,22 @@ is VBZ ROOT
                              +-- the DT det
 Input: A man with equipment used for climbing is hanging from a white , vertical rock .
 Parse:
-. . ROOT
+hanging VBG ROOT
+ +-- man NN nsubj
+ |   +-- A DT det
+ |   +-- with IN prep
+ |       +-- equipment NN pobj
+ |           +-- used VBN partmod
+ |               +-- for IN prep
+ |                   +-- climbing NN pobj
+ +-- is VBZ aux
+ +-- from IN prep
+ |   +-- rock NN pobj
+ |       +-- a DT det
+ |       +-- white JJ amod
+ |       +-- , , prep
+ |       +-- vertical JJ amod
+ +-- . . prep
 Input: A woman with a ponytail is climbing down a wall of rock
 Parse:
 climbing VBG ROOT
@@ -4919,7 +4995,22 @@ climbing VBG ROOT
          +-- rock NN pobj
 Input: A man with equipment used for climbing is hanging from a white , vertical rock .
 Parse:
-. . ROOT
+hanging VBG ROOT
+ +-- man NN nsubj
+ |   +-- A DT det
+ |   +-- with IN prep
+ |       +-- equipment NN pobj
+ |           +-- used VBN partmod
+ |               +-- for IN prep
+ |                   +-- climbing NN pobj
+ +-- is VBZ aux
+ +-- from IN prep
+ |   +-- rock NN pobj
+ |       +-- a DT det
+ |       +-- white JJ amod
+ |       +-- , , prep
+ |       +-- vertical JJ amod
+ +-- . . prep
 Input: A woman is tailing a pony near a rock climbing wall
 Parse:
 tailing VBG ROOT
@@ -4948,7 +5039,22 @@ climbing VBG ROOT
          +-- rock NN pobj
 Input: A man with equipment used for climbing is hanging from a white , vertical rock .
 Parse:
-. . ROOT
+hanging VBG ROOT
+ +-- man NN nsubj
+ |   +-- A DT det
+ |   +-- with IN prep
+ |       +-- equipment NN pobj
+ |           +-- used VBN partmod
+ |               +-- for IN prep
+ |                   +-- climbing NN pobj
+ +-- is VBZ aux
+ +-- from IN prep
+ |   +-- rock NN pobj
+ |       +-- a DT det
+ |       +-- white JJ amod
+ |       +-- , , prep
+ |       +-- vertical JJ amod
+ +-- . . prep
 Input: A black and a white dog are joyfully running on the grass
 Parse:
 running VBG ROOT
@@ -5230,7 +5336,21 @@ raising VBG ROOT
          +-- her PRP$ poss
 Input: A girl in a uniform , which is blue , is raising her arm .
 Parse:
-. . ROOT
+raising VBG ROOT
+ +-- girl NN nsubj
+ |   +-- A DT det
+ |   +-- in IN prep
+ |       +-- uniform NN pobj
+ |           +-- a DT det
+ |           +-- , , punct
+ |           +-- blue JJ rcmod
+ |           |   +-- which WDT nsubj
+ |           |   +-- is VBZ cop
+ |           +-- , , punct
+ +-- is VBZ aux
+ +-- arm NN dobj
+ |   +-- her PRP$ poss
+ +-- . . punct
 Input: People are on a beach full of sand by the ocean and are enjoying a sunny day
 Parse:
 are VBP ROOT
@@ -5475,7 +5595,17 @@ blowing VBG ROOT
          +-- is VBZ cop
 Input: A bubble blew , dyeing the girl 's shirt red .
 Parse:
-. . ROOT
+blew VBG ROOT
+ +-- bubble NN dobj
+ |   +-- A DT det
+ +-- , , punct
+ +-- dyeing NN xcomp
+ |   +-- shirt NN pobj
+ |   |   +-- girl NN poss
+ |   |       +-- the DT det
+ |   |       +-- 's POS possessive
+ |   +-- red JJ acomp
+ +-- . . punct
 Input: A young child is barefoot and is walking past a puddle full of mud
 Parse:
 barefoot NN ROOT
@@ -11210,14 +11340,16 @@ driven VBN ROOT
          +-- the DT det
 Input: There is no white car being driven by the man
 Parse:
-car NN ROOT
- +-- no DT det
- +-- white JJ amod
- +-- driven VBN partmod
-     +-- being VBG auxpass
-     +-- by IN prep
-         +-- man NN pobj
-             +-- the DT det
+is VBZ ROOT
+ +-- There EX expl
+ +-- car NN nsubj
+     +-- no DT det
+     +-- white JJ amod
+     +-- driven VBN partmod
+         +-- being VBG auxpass
+         +-- by IN prep
+             +-- man NN pobj
+                 +-- the DT det
 Input: The man is granting an interview
 Parse:
 granting VBG ROOT
@@ -11255,13 +11387,15 @@ granting VBG ROOT
      +-- an DT det
 Input: There is no rope being climbed by a man
 Parse:
-rope NN ROOT
- +-- no DT det
- +-- climbed VBN partmod
-     +-- being VBG auxpass
-     +-- by IN prep
-         +-- man NN pobj
-             +-- a DT det
+is VBZ ROOT
+ +-- There EX expl
+ +-- rope NN nsubj
+     +-- no DT det
+     +-- climbed VBN partmod
+         +-- being VBG auxpass
+         +-- by IN prep
+             +-- man NN pobj
+                 +-- a DT det
 Input: A man is being roped by a climber
 Parse:
 roped VBN ROOT
@@ -14563,6 +14697,7 @@ Input: Two cats are playfully fighting each other
 Parse:
 fighting VBG ROOT
  +-- cats NNS nsubj
+     +-- Two CD num
  +-- are VBP aux
  +-- playfully RB advmod
  +-- other JJ dobj
@@ -15671,11 +15806,13 @@ pacing VBG ROOT
      +-- a DT det
 Input: There is no man eating some food
 Parse:
-man NN ROOT
- +-- no DT det
- +-- eating VBG dep
-     +-- food NN dobj
-         +-- some DT det
+is VBZ ROOT
+ +-- There EX expl
+ +-- man NN nsubj
+     +-- no DT det
+     +-- eating VBG partmod
+         +-- food NN dobj
+             +-- some DT det
 Input: The man is eating
 Parse:
 eating VBG ROOT
@@ -36396,14 +36533,19 @@ standing VBG ROOT
          +-- the DT det
 Input: Three men are not staring at the big green hills in the distance
 Parse:
-at IN ROOT
- +-- hills NNS pobj
-     +-- the DT det
-     +-- big JJ amod
-     +-- green JJ amod
-     +-- in IN prep
-         +-- distance NN pobj
-             +-- the DT det
+staring VBG ROOT
+ +-- men NNS nsubj
+ |   +-- Three CD num
+ +-- are VBP aux
+ +-- not neg
+ +-- at IN prep
+     +-- hills NNS pobj
+         +-- the DT det
+         +-- big JJ amod
+         +-- green JJ amod
+         +-- in IN prep
+             +-- distance NN pobj
+                 +-- the DT det
 Input: Three men are staring at the big green hills in the distance
 Parse:
 staring VBG ROOT
@@ -58307,8 +58449,9 @@ are VBZ ROOT
  |   +-- clothes NNS dobj
  |       +-- , , punct
  +-- provides VBP rcmod
-     +-- which WDT nsubj
-     +-- camouflage NN dobj
+ |   +-- which WDT nsubj
+ |   +-- camouflage NN dobj
+ +-- . . punct
 Input: Nobody is in the snow wearing clothes that provide camouflage
 Parse:
 is VBZ ROOT
@@ -58909,7 +59052,8 @@ raising VBG ROOT
  |           +-- , , punct
  +-- is VBZ aux
  +-- arm NN dobj
-     +-- her PRP$ poss
+ |   +-- her PRP$ poss
+ +-- .  . punct
 Input: A girl in a uniform , which is blue , is raising her arm .
 Parse:
 raising VBG ROOT
@@ -58925,7 +59069,8 @@ raising VBG ROOT
  |           +-- , , punct
  +-- is VBZ aux
  +-- arm NN dobj
-     +-- her PRP$ poss
+ |   +-- her PRP$ poss
+ +-- .  . punct
 Input: A girl in a uniform , which is blue , is quickly raising her arm
 Parse:
 raising VBG ROOT
@@ -61495,11 +61640,13 @@ frying VBG ROOT
      +-- a DT det
 Input: There is no man frying a tortilla
 Parse:
-man NN ROOT
- +-- no DT det
- +-- frying VBG dep
-     +-- tortilla NN dobj
-         +-- a DT det
+is VBZ ROOT
+ +-- There EX expl
+ +-- man NN nsubj
+     +-- no DT det
+     +-- frying VBG partmod
+         +-- tortilla NN dobj
+             +-- a DT det
 Input: A person is performing a card trick
 Parse:
 performing VBG ROOT
@@ -63204,8 +63351,10 @@ pouring VBG ROOT
          +-- the DT det
 Input: Few men like pouring tomato oil
 Parse:
-like IN ROOT
- +-- pouring VBG pcomp
+like VBG ROOT
+ +-- men NN nsubj
+ |   +-- Few JJ amod
+ +-- pouring VBG xcomp
      +-- oil NN dobj
          +-- tomato NN nn
 Input: The man is pouring oil on a few tomatoes
@@ -64698,9 +64847,16 @@ removing VBG ROOT
  +-- carefully RB advmod
  +-- makeup NN dobj
      +-- her PRP$ poss
-Input: A woman is putting on some makeup carefully ,
+Input: A woman is putting on some makeup carefully
 Parse:
-, , ROOT
+putting VBG ROOT
+ +-- woman NN nsubj
+ |   +-- A DT det
+ +-- is VBZ aux
+ +-- on RP prt
+ +-- makeup NN dobj
+ |   +-- some DT det
+ +-- carefully RB advmod
 Input: The band is singing
 Parse:
 singing VBG ROOT
@@ -65340,13 +65496,15 @@ climbed VBN ROOT
          +-- a DT det
 Input: There is no rope being climbed by a man
 Parse:
-rope NN ROOT
- +-- no DT det
- +-- climbed VBN partmod
-     +-- being VBG auxpass
-     +-- by IN prep
-         +-- man NN pobj
-             +-- a DT det
+is VBZ ROOT
+ +-- There EX expl
+ +-- rope NN nsubj
+     +-- no DT det
+     +-- climbed VBN partmod
+         +-- being VBG auxpass
+         +-- by IN prep
+             +-- man NN pobj
+                 +-- a DT det
 Input: The cat is licking a shallow dish full of milk
 Parse:
 licking VBG ROOT
@@ -69020,6 +69178,7 @@ Input: Two cats are playfully fighting each other
 Parse:
 fighting VBG ROOT
  +-- cats NNS nsubj
+     +-- Two CD num
  +-- are VBP aux
  +-- playfully RB advmod
  +-- other JJ dobj
