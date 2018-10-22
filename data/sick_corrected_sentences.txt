@@ -1,0 +1,87 @@
+Four girls are doing backbends and playing in the garden
+A sitting man is busy writing something in an area covered by paint
+Two men are not holding fishing poles [removing not corrects the parse]
+A biker is naked
+A dog , which is brown , and a black one are running in the grass
+A group of boys are quiet in front of a large door made of wood
+A dog , which is black , and a white one are staring at each other in the street
+A dog next to a tree , which is probably a pine , is biting a bucket
+A dog which is furry and black is in a backyard and is carrying a basket in its mouth .
+The study subject is a camera man
+A snow slide is full of kids
+One white dog and one black one are sitting side by side on the grass
+The ice skating rink placed outdoors is full of people
+A young child is barefoot and is walking past a puddle full of mud [A young child is wearing green boots and playing in a puddle full of mud parses correctly]
+Some kittens are hungry
+The intense man is a guitar player
+The man is clumsily kick boxing a trainer
+A man and a woman are silent
+A kitten is getting bored
+The writing is about a person penciling
+The fish are immobile
+A man is sprinkling shredded cheese on a pizza
+A woman is deep frying food
+Two women are wearing bikinis and are walking on the sand
+The cheerleaders are parading and wearing uniforms which are black , pink and white
+Two men , a woman , and two young boys are standing aimlessly in front of a large gathering of people outside a building
+A person is shirtless and is putting down the beer
+A woman dressed in elegant clothing is inside a crowd of people and is looking down
+Some bikers are getting airborne on a track near water and a skyline
+A tan dog which is dirty is rolling in the dirt and looking right at the camera
+A boy next to some buckets of rags is holding an object
+The man dressed in chaps made of leather and a purple shirt is standing in front of some onlookers
+Four girls are doing backbends and playing in the garden
+The dog , which is black and white , is running and a person stands behind it
+A dog , which is black , and a white one are ignoring each other in the street
+A classroom is full of students
+One white dog and one black one are running side by side on the grass
+An old woman is shirtless and is clumsily dropping two newspapers
+The man is a guitar player
+Milk is a kitten 's drink
+The play is about a happy boy playing the piano
+A guinea pig , which is small , is gnawing and eating a piece of carrot on the floor
+A red sweatshirt with a smiling lady upon it is suited to be worn with light brown hair , earrings and a necklace
+Two people are in the snow holding two dogs with golden coats
+A dog , which has a black coat , and a white dog are running on the grass
+Not a lot of people are in an ice skating park
+An ice skating rink placed outdoors is full of people
+A boy in a red shirt is in front of a wall , which is long and blue , and is suspiciously raising an eyebrow at the camera
+A girl is naked and is standing on the grass
+The piano player is being a tough man
+A piece of bread , which is big , is having butter spread upon it by a man OR A piece of bread , which is big , is being spread with butter by a man
+The parrot is silent in front of the microphone
+Some water is being casually drunk by a cat
+The man in not playing the flute
+A man is silent
+A man is naked and standing still
+The man is silent and still
+A man is outside and is throwing blades at a close target
+The child is silent
+Two people are standing in the ocean and looking at the sunset
+A little boy is topless and is serious
+A picture of himself and another guy is being taken by the man
+A hockey player in a yellow jersey is guarding the goal
+A large stream is full of rocks , ducks and flies
+Two men , a woman , and two young boys are standing in front of a large gathering of people outside a building
+A person is shirtless and is putting down the beer
+Four athletes are with a woman in a crowded stadium
+An elegant woman is inside a crowd of people and is looking down
+Two poodles are in the snow and one is jumping high
+A man in a motocross uniform is wearing a helmet and rides a red motorcycle ["A person in a motocross uniform is wearing a helmet and rides a red motorcycle" parses correctly]
+The green field for horse races is completely full of Jockeys
+A boy at the bottom of a hill covered in snow is naked and is sitting on his knees
+A boy next to some buckets of rags is not holding an object
+The man dressed in leather chaps and a purple shirt is standing in front of someone lookers
+The equipment in front of the blond dancing girl is sound
+Two men are holding bikes and standing on the side of a road covered of snow
+A classroom is empty
+An ice skating rink placed outdoors is empty
+A man is scared
+One man is powering the microwave
+The parrot is silent in front of the microphone
+A group of people is silent
+A man is motionless
+Two people are standing in the ocean and watching the sunset
+A woman dressed in elegant clothing is inside a crowd of people and is looking up
+A man is not rock climbing and a city and a bay are in the background
+Two young girls are wearing hats and sticking their colored tongues out

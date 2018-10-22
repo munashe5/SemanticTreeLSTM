@@ -94,7 +94,7 @@ Input: Two dogs are wrestling and hugging
 Parse:
 wrestling VBG ROOT
  +-- dogs NNS nsubj
- |   +-- Two CD ROOT
+ |   +-- Two CD num
  +-- are VBP aux
  +-- and CC cc
  +-- hugging VBG conj
@@ -108,7 +108,7 @@ Input: Two dogs are wrestling and hugging
 Parse:
 wrestling VBG ROOT
  +-- dogs NNS nsubj
- |   +-- Two CD ROOT
+ |   +-- Two CD num
  +-- are VBP aux
  +-- and CC cc
  +-- hugging VBG conj
@@ -170,23 +170,23 @@ dunked VBN ROOT
          +-- basketball NN nn
 Input: A man who is playing dunks the basketball into the net and a crowd is in background
 Parse:
-man NN ROOT
- +-- A DT det
- +-- playing VBG rcmod
-     +-- who WP nsubj
-     +-- is VBZ aux
-     +-- dunks NNS dobj
-     +-- is VBZ dep
-         +-- basketball NN nsubj
-         |   +-- the DT det
-         |   +-- into IN prep
-         |   |   +-- net NN pobj
-         |   |       +-- the DT det
-         |   +-- and CC cc
-         |   +-- crowd NN conj
-         |       +-- a DT det
-         +-- in IN prep
-             +-- background NN pobj
+dunks VBP ROOT
+ +-- man NN nsubj
+ |   +-- A DT det
+ |   +-- playing VBG rcmod
+ |       +-- who WP nsubj
+ |       +-- is VBZ aux
+ +-- basketball NN pobj
+ |   +-- the DT det
+ +-- into IN prep
+ |   +-- net NN pobj
+ |   |   +-- the DT det
+ +-- and CC cc
+ +-- is VBZ aux
+     +-- crowd NN conj
+     |   +-- a DT det
+     +-- in IN prep
+         +-- background NN pobj
 Input: A man with a jersey is dunking the ball at a basketball game
 Parse:
 dunking VBG ROOT
@@ -2599,23 +2599,23 @@ playing VBG ROOT
          +-- red JJ amod
 Input: The dog , which is black and white , is running and a person stands behind it
 Parse:
-dog NN ROOT
- +-- The DT det
- +-- , , punct
- +-- black JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- and CC cc
-     +-- white JJ conj
-     +-- , , punct
-     +-- running VBG conj
-     |   +-- is VBZ aux
-     +-- and CC cc
-     +-- stands VBZ conj
-         +-- person NN nsubj
-         |   +-- a DT det
-         +-- behind IN prep
-             +-- it PRP pobj
+running VBG ROOT
+ +-- dog NN nsubj
+ |   +-- The DT det
+ |   +-- , , punct
+ |   +-- black JJ rcmod
+ |   |   +-- which WDT nsubj
+ |   |   +-- is VBZ cop
+ |   |   +-- and CC cc
+ |   |   +-- white JJ conj
+ |   +-- , , punct
+ +-- is VBZ aux
+ +-- and CC cc
+ +-- stands VBZ conj
+     +-- person NN nsubj
+     |   +-- a DT det
+     +-- behind IN prep
+         +-- it PRP pobj
 Input: A little dog is sprinting and its owner is trying to catch it
 Parse:
 sprinting VBG ROOT
@@ -2933,10 +2933,10 @@ is VBZ ROOT
                  +-- a DT det
 Input: A biker is naked
 Parse:
-naked JJ ROOT
+is VBZ ROOT
  +-- biker NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- naked JJ acomp
 Input: The man in a t-shirt dyed grey is sitting on a rock in front of a waterfall
 Parse:
 sitting VBG ROOT
@@ -3058,22 +3058,22 @@ is VBZ ROOT
                  +-- the DT det
 Input: A dog , which is brown , and a black one are running in the grass
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- , , punct
- +-- brown JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- , , punct
-     +-- and CC cc
-     +-- running VBG conj
-         +-- one CD nsubj
-         |   +-- a DT det
-         |   +-- black JJ amod
-         +-- are VBP aux
-         +-- in IN prep
-             +-- grass NN pobj
-                 +-- the DT det
+running VBG ROOT
+ +-- dog NN nsubj
+ |    +-- A DT det
+ |    +-- , , punct
+ |    +-- is VBZ rcmod
+ |    |   +-- which WDT nsubj
+ |    |   +-- brown JJ acomp  
+ |    +-- , , punct
+ |    +-- and CC cc
+ |    +-- one NN conj
+ |    |   +-- a DT det
+ |    |   +-- black JJ amod
+ +-- are VBP aux
+ +-- in IN prep
+     +-- grass NN pobj
+         +-- the DT det
 Input: A dark black dog and a light brown dog are playing in the backyard
 Parse:
 playing VBG ROOT
@@ -3092,40 +3092,40 @@ playing VBG ROOT
          +-- the DT det
 Input: A dog , which is brown , and a black one are running in the grass
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- , , punct
- +-- brown JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- , , punct
-     +-- and CC cc
-     +-- running VBG conj
-         +-- one CD nsubj
-         |   +-- a DT det
-         |   +-- black JJ amod
-         +-- are VBP aux
-         +-- in IN prep
-             +-- grass NN pobj
-                 +-- the DT det
+running VBG ROOT
+ +-- dog NN nsubj
+ |    +-- A DT det
+ |    +-- , , punct
+ |    +-- is VBZ rcmod
+ |    |   +-- which WDT nsubj
+ |    |   +-- brown JJ acomp  
+ |    +-- , , punct
+ |    +-- and CC cc
+ |    +-- one NN conj
+ |    |   +-- a DT det
+ |    |   +-- black JJ amod
+ +-- are VBP aux
+ +-- in IN prep
+     +-- grass NN pobj
+         +-- the DT det
 Input: A dog , which is brown , and a black one are running in the grass
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- , , punct
- +-- brown JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- , , punct
-     +-- and CC cc
-     +-- running VBG conj
-         +-- one CD nsubj
-         |   +-- a DT det
-         |   +-- black JJ amod
-         +-- are VBP aux
-         +-- in IN prep
-             +-- grass NN pobj
-                 +-- the DT det
+running VBG ROOT
+ +-- dog NN nsubj
+ |    +-- A DT det
+ |    +-- , , punct
+ |    +-- is VBZ rcmod
+ |    |   +-- which WDT nsubj
+ |    |   +-- brown JJ acomp  
+ |    +-- , , punct
+ |    +-- and CC cc
+ |    +-- one NN conj
+ |    |   +-- a DT det
+ |    |   +-- black JJ amod
+ +-- are VBP aux
+ +-- in IN prep
+     +-- grass NN pobj
+         +-- the DT det
 Input: A dark black dog and a light brown dog are playing in the backyard
 Parse:
 playing VBG ROOT
@@ -3240,21 +3240,21 @@ playing VBG ROOT
                  +-- large JJ amod
 Input: A group of boys are quiet in front of a large door made of wood
 Parse:
-quiet JJ ROOT
+are VBP ROOT
  +-- group NN nsubj
  |   +-- A DT det
  |   +-- of IN prep
  |       +-- boys NNS pobj
- +-- are VBP cop
+ +-- quiet JJ acomp 
  +-- in IN prep
      +-- front NN pobj
          +-- of IN prep
              +-- door NN pobj
                  +-- a DT det
                  +-- large JJ amod
-                 +-- made VBN partmod
-                     +-- of IN prep
-                         +-- wood NN pobj
+             +-- made VBN vmod
+                 +-- of IN prep
+                     +-- wood NN pobj
 Input: A woman is taking off a cloak , which is very large , and revealing extravagant apparel
 Parse:
 taking VBG ROOT
@@ -3352,7 +3352,7 @@ is VBZ ROOT
          +-- smiling VBG conj
 Input: A red sweatshirt with a smiling lady upon it is suited to be worn with light brown hair , earrings and a necklace
 Parse:
-suited JJ ROOT
+is VBN ROOT
  +-- sweatshirt NN nsubj
  |   +-- A DT det
  |   +-- red JJ amod
@@ -3362,7 +3362,7 @@ suited JJ ROOT
  |           +-- smiling NN amod
  |           +-- upon IN prep
  |               +-- it PRP pobj
- +-- is VBZ cop
+ +-- suited JJ acomp
  +-- worn VBN xcomp
      +-- to TO aux
      +-- be VB auxpass
@@ -3884,23 +3884,23 @@ looking VBG ROOT
          +-- a DT det
 Input: A dog next to a tree , which is probably a pine , is biting a bucket
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- next RB advmod
- |   +-- to IN prep
- |       +-- tree NN pobj
- |           +-- a DT det
- |           +-- , , punct
- |           +-- pine NN rcmod
- |               +-- which WDT nsubj
- |               +-- is VBZ cop
- |               +-- probably RB advmod
- |               +-- a DT det
- +-- , , punct
- +-- biting VBG dep
-     +-- is VBZ aux
-     +-- bucket NN dobj
-         +-- a DT det
+biting VBG ROOT
+ +-- dog NN nsubj
+ |   +-- A DT det
+ |   +-- next JJ amod
+ |   |   +-- to IN prep
+ |   |       +-- tree NN pobj
+ |   |           +-- a DT det
+ |   |           +-- , , punct
+ |   |           +-- is VBZ rcmod
+ |   |               +-- which WDT nsubj
+ |   |               +-- probably RB advmod
+ |   |               +-- pine NN attr
+ |   |                   +-- a DT det                 
+ |   +-- , , punct
+ +-- is VBZ aux
+ +-- bucket NN dobj
+     +-- a DT det
 Input: A dog in a bucket is biting a tree which is probably a pine
 Parse:
 biting VBG ROOT
@@ -3983,23 +3983,23 @@ is VBZ ROOT
  +-- . . punct
 Input: A dog next to a tree , which is probably a pine , is biting a bucket
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- next RB advmod
- |   +-- to IN prep
- |       +-- tree NN pobj
- |           +-- a DT det
- |           +-- , , punct
- |           +-- pine NN rcmod
- |               +-- which WDT nsubj
- |               +-- is VBZ cop
- |               +-- probably RB advmod
- |               +-- a DT det
- +-- , , punct
- +-- biting VBG dep
-     +-- is VBZ aux
-     +-- bucket NN dobj
-         +-- a DT det
+biting VBG ROOT
+ +-- dog NN nsubj
+ |   +-- A DT det
+ |   +-- next JJ amod
+ |   |   +-- to IN prep
+ |   |       +-- tree NN pobj
+ |   |           +-- a DT det
+ |   |           +-- , , punct
+ |   |           +-- is VBZ rcmod
+ |   |               +-- which WDT nsubj
+ |   |               +-- probably RB advmod
+ |   |               +-- pine NN attr
+ |   |                   +-- a DT det                 
+ |   +-- , , punct
+ +-- is VBZ aux
+ +-- bucket NN dobj
+     +-- a DT det
 Input: A dog next to a tree , which is probably a pine , is dropping a bucket
 Parse:
 dropping VBG ROOT
@@ -4147,13 +4147,13 @@ is VBZ ROOT
                      +-- the DT det
 Input: The study subject is a camera man
 Parse:
-man NN ROOT
- +-- study NN nsubj
+is VBZ ROOT
+ +-- subject NN nsubj
  |   +-- The DT det
- |   +-- subject NN amod
- +-- is VBZ cop
- +-- a DT det
- +-- camera NN nn
+ |   +-- study NN nn
+ +-- man NN attr
+     +-- a DT det
+     +-- camera NN nn
 Input: The man in the purple hat is operating a camera that makes videos
 Parse:
 operating VBG ROOT
@@ -4365,21 +4365,21 @@ attended VBN ROOT
              +-- students NNS pobj
 Input: A classroom is full of students
 Parse:
-full JJ ROOT
+is VBZ ROOT
  +-- classroom NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
- +-- of IN prep
-     +-- students NNS pobj
+ +-- full JJ acomp
+     +-- of IN prep
+         +-- students NNS pobj
 Input: A classroom is empty
 Parse:
-empty JJ ROOT
+is VBZ ROOT
  +-- classroom NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- empty JJ acomp
 Input: A boy at the bottom of a hill covered in snow is naked and is sitting on his knees
 Parse:
-naked JJ ROOT
+is VBZ ROOT
  +-- boy NN nsubj
  |   +-- A DT det
  |   +-- at IN prep
@@ -4391,7 +4391,7 @@ naked JJ ROOT
  |                   +-- covered VBN partmod
  |                       +-- in IN prep
  |                           +-- snow NN pobj
- +-- is VBZ cop
+ +-- naked JJ acomp
  +-- and CC cc
  +-- sitting VBG conj
      +-- is VBZ aux
@@ -4452,7 +4452,7 @@ is VBZ ROOT
          +-- the DT det
 Input: A boy at the bottom of a hill covered in snow is naked and is sitting on his knees
 Parse:
-naked JJ ROOT
+is VBZ ROOT
  +-- boy NN nsubj
  |   +-- A DT det
  |   +-- at IN prep
@@ -4464,7 +4464,7 @@ naked JJ ROOT
  |                   +-- covered VBN partmod
  |                       +-- in IN prep
  |                           +-- snow NN pobj
- +-- is VBZ cop
+ +-- naked JJ acomp
  +-- and CC cc
  +-- sitting VBG conj
      +-- is VBZ aux
@@ -4936,21 +4936,21 @@ running VBG ROOT
          +-- the DT det
 Input: One white dog and one black one are running side by side on the grass
 Parse:
-dog NN ROOT
- +-- One CD num
- +-- white JJ amod
- +-- and CC cc
- +-- running VBG conj
-     +-- one CD nsubj
-     |   +-- one CD num
-     |   +-- black JJ amod
-     +-- are VBP aux
-     +-- side NN dobj
-     |   +-- by IN prep
-     |       +-- side NN pobj
-     +-- on IN prep
-         +-- grass NN pobj
-             +-- the DT det
+running VBG ROOT
+ +-- dog NN nsubj
+ |   +-- One CD num
+ |   +-- white JJ amod
+ |   +-- and CC cc
+ |       +-- one CD nsubj
+ |       |   +-- one CD num
+ |       |   +-- black JJ amod
+ +-- are VBP aux
+ +-- side NN dobj
+ |   +-- by IN prep
+ |       +-- side NN pobj
+ +-- on IN prep
+     +-- grass NN pobj
+         +-- the DT det
 Input: A black and a white dog are joyfully running on the grass
 Parse:
 running VBG ROOT
@@ -4981,34 +4981,34 @@ running VBG ROOT
          +-- the DT det
 Input: One white dog and one black one are running side by side on the grass
 Parse:
-dog NN ROOT
- +-- One CD num
- +-- white JJ amod
- +-- and CC cc
- +-- running VBG conj
-     +-- one CD nsubj
-     |   +-- one CD num
-     |   +-- black JJ amod
-     +-- are VBP aux
-     +-- side NN dobj
-     |   +-- by IN prep
-     |       +-- side NN pobj
-     +-- on IN prep
-         +-- grass NN pobj
-             +-- the DT det
+running VBG ROOT
+ +-- dog NN nsubj
+ |   +-- One CD num
+ |   +-- white JJ amod
+ |   +-- and CC cc
+ |       +-- one CD nsubj
+ |       |   +-- one CD num
+ |       |   +-- black JJ amod
+ +-- are VBP aux
+ +-- side NN dobj
+ |   +-- by IN prep
+ |       +-- side NN pobj
+ +-- on IN prep
+     +-- grass NN pobj
+         +-- the DT det
 Input: Not a lot of people are in an ice skating park
 Parse:
-Not RB ROOT
- +-- are VBP dep
-     +-- lot NN nsubj
-     |   +-- a DT det
-     |   +-- of IN prep
-     |       +-- people NNS pobj
-     +-- in IN prep
-         +-- park NN pobj
-             +-- an DT det
-             +-- skating NN nn
-                 +-- ice NN nn
+are VBP ROOT
+ +-- lot NN nsubj
+ |   +-- Not RB neg
+ |   +-- a DT det
+ |   +-- of IN prep
+ |       +-- people NNS pobj
+ +-- in IN prep
+     +-- park NN pobj
+         +-- an DT det
+         +-- skating NN nn
+             +-- ice NN nn
 Input: A lot of people are in an ice skating park
 Parse:
 are VBP ROOT
@@ -5023,28 +5023,28 @@ are VBP ROOT
              +-- ice NN nn
 Input: An ice skating rink placed outdoors is full of people
 Parse:
-full JJ ROOT
+is VBZ ROOT
  +-- rink NN nsubj
  |   +-- An DT det
  |   +-- skating NN nn
  |   |   +-- ice NN nn
- |   +-- placed VBD partmod
+ |   +-- placed VBD vmod
  |       +-- outdoors RB advmod
- +-- is VBZ cop
- +-- of IN prep
-     +-- people NNS pobj
+ +-- full JJ amod
+     +-- of IN prep
+         +-- people NNS pobj
 Input: An ice skating rink placed outdoors is full of people
 Parse:
-full JJ ROOT
+is VBZ ROOT
  +-- rink NN nsubj
  |   +-- An DT det
  |   +-- skating NN nn
  |   |   +-- ice NN nn
- |   +-- placed VBD partmod
+ |   +-- placed VBD vmod
  |       +-- outdoors RB advmod
- +-- is VBZ cop
- +-- of IN prep
-     +-- people NNS pobj
+ +-- full JJ amod
+     +-- of IN prep
+         +-- people NNS pobj
 Input: An ice skater is outdoors performing on a rink full of people
 Parse:
 performing VBG ROOT
@@ -6109,17 +6109,17 @@ slowing VBG ROOT
              +-- completely RB advmod
 Input: The green field for horse races is completely full of Jockeys
 Parse:
-full JJ ROOT
+is VBZ ROOT
  +-- field NN nsubj
  |   +-- The DT det
  |   +-- green JJ amod
  |   +-- for IN prep
  |       +-- races NNS pobj
  |           +-- horse NN nn
- +-- is VBZ cop
- +-- completely RB advmod
- +-- of IN prep
-     +-- Jockeys NNPS pobj
+ +-- full JJ amod
+     +-- completely RB advmod
+     +-- of IN prep
+         +-- Jockeys NNPS pobj
 Input: The woman is wearing sunglasses of large size and is holding newspapers in both hands
 Parse:
 wearing VBG ROOT
@@ -6538,10 +6538,10 @@ lying VBG ROOT
          +-- the DT det
 Input: A girl is naked and is standing on the grass
 Parse:
-naked JJ ROOT
+is VBZ cop
  +-- girl NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- naked JJ acomp
  +-- and CC cc
  +-- standing VBG conj
      +-- is VBZ aux
@@ -9081,12 +9081,12 @@ played VBN ROOT
      +-- nobody NN pobj
 Input: The man is a guitar player
 Parse:
-player NN ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- The DT det
- +-- is VBZ cop
- +-- a DT det
- +-- guitar NN nn
+ +-- player NN attr
+     +-- a DT det
+     +-- guitar NN nn
 Input: The guitar is being played by a man
 Parse:
 played VBN ROOT
@@ -9485,26 +9485,26 @@ played VBN ROOT
          +-- a DT det
 Input: The piano player is being a tough man
 Parse:
-man NN ROOT
+being VBG ROOT
  +-- player NN nsubj
  |   +-- The DT det
  |   +-- piano NN nn
  +-- is VBZ aux
- +-- being VBG cop
- +-- a DT det
- +-- tough JJ amod
+ +-- man NN attr
+     +-- a DT det
+     +-- tough JJ amod
 Input: The play is about a happy boy playing the piano
 Parse:
-boy NN ROOT
+is VBZ ROOT
  +-- play NN nsubj
  |   +-- The DT det
- +-- is VBZ cop
  +-- about RB advmod
- +-- a DT det
- +-- happy JJ amod
- +-- playing VBG partmod
-     +-- piano NN dobj
-         +-- the DT det
+ +-- boy NN pobj
+     +-- a DT det
+     +-- happy JJ amod
+     +-- playing VBG partmod
+         +-- piano NN dobj
+             +-- the DT det
 Input: A piano is being played by a man
 Parse:
 played VBN ROOT
@@ -9840,42 +9840,42 @@ smearing VBG ROOT
      +-- bread NN pobj
 Input: A piece of bread , which is big , is having butter spread upon it by a man OR A piece of bread , which is big , is being spread with butter by a man
 Parse:
-piece NN ROOT
- +-- A DT det
- +-- of IN prep
- |   +-- bread NN pobj
- +-- , , punct
- +-- big JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- , , punct
-     +-- having VBG xcomp
+having VBG ROOT
+ +-- piece NN nsubj
+ |   +-- A DT det
+ |   +-- of IN prep
+ |   |   +-- bread NN pobj
+ |   +-- , , punct
+ |   +-- big JJ rcmod
+ |       +-- which WDT nsubj
+ |       +-- is VBZ cop
+ |       +-- , , punct
+ +-- is VBZ aux
+ +-- spread VBN ccomp
+ |   +-- butter NN nsubj
+ |   +-- upon IN prep
+ |       +-- it PRP pobj
+ |   +-- by IN prep
+ |       +-- man NN pobj
+ |           +-- a DT det
+ +-- OR IN prep
+     +-- spread VBN dep
+         +-- piece NN pobj
+         |   +-- A DT det
+         |   +-- of IN prep
+         |   |   +-- bread NN pobj
+         |   +-- , , punct
+         |   +-- big JJ rcmod
+         |       +-- which WDT nsubj
+         |       +-- is VBZ cop
+         |       +-- , , punct
          +-- is VBZ aux
-         +-- spread VBN ccomp
-             +-- butter NN nsubj
-             +-- upon IN prep
-             |   +-- it PRP pobj
-             +-- by IN prep
-             |   +-- man NN pobj
-             |       +-- a DT det
-             +-- OR IN prep
-                 +-- piece NN pobj
-                     +-- A DT det
-                     +-- of IN prep
-                     |   +-- bread NN pobj
-                     +-- , , punct
-                     +-- big JJ rcmod
-                         +-- which WDT nsubj
-                         +-- is VBZ cop
-                         +-- , , punct
-                         +-- spread VBN dep
-                             +-- is VBZ aux
-                             +-- being VBG auxpass
-                             +-- with IN prep
-                             |   +-- butter NN pobj
-                             +-- by IN prep
-                                 +-- man NN pobj
-                                     +-- a DT det
+         +-- being VBG auxpass
+         +-- with IN prep
+         |   +-- butter NN pobj
+         +-- by IN prep
+             +-- man NN pobj
+                 +-- a DT det
 Input: A man is spreading butter on a piece of bread which is big
 Parse:
 spreading VBG ROOT
@@ -9893,42 +9893,42 @@ spreading VBG ROOT
              +-- is VBZ cop
 Input: A piece of bread , which is big , is having butter spread upon it by a man OR A piece of bread , which is big , is being spread with butter by a man
 Parse:
-piece NN ROOT
- +-- A DT det
- +-- of IN prep
- |   +-- bread NN pobj
- +-- , , punct
- +-- big JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- , , punct
-     +-- having VBG xcomp
+having VBG ROOT
+ +-- piece NN nsubj
+ |   +-- A DT det
+ |   +-- of IN prep
+ |   |   +-- bread NN pobj
+ |   +-- , , punct
+ |   +-- big JJ rcmod
+ |       +-- which WDT nsubj
+ |       +-- is VBZ cop
+ |       +-- , , punct
+ +-- is VBZ aux
+ +-- spread VBN ccomp
+ |   +-- butter NN nsubj
+ |   +-- upon IN prep
+ |       +-- it PRP pobj
+ |   +-- by IN prep
+ |       +-- man NN pobj
+ |           +-- a DT det
+ +-- OR IN prep
+     +-- spread VBN dep
+         +-- piece NN pobj
+         |   +-- A DT det
+         |   +-- of IN prep
+         |   |   +-- bread NN pobj
+         |   +-- , , punct
+         |   +-- big JJ rcmod
+         |       +-- which WDT nsubj
+         |       +-- is VBZ cop
+         |       +-- , , punct
          +-- is VBZ aux
-         +-- spread VBN ccomp
-             +-- butter NN nsubj
-             +-- upon IN prep
-             |   +-- it PRP pobj
-             +-- by IN prep
-             |   +-- man NN pobj
-             |       +-- a DT det
-             +-- OR IN prep
-                 +-- piece NN pobj
-                     +-- A DT det
-                     +-- of IN prep
-                     |   +-- bread NN pobj
-                     +-- , , punct
-                     +-- big JJ rcmod
-                         +-- which WDT nsubj
-                         +-- is VBZ cop
-                         +-- , , punct
-                         +-- spread VBN dep
-                             +-- is VBZ aux
-                             +-- being VBG auxpass
-                             +-- with IN prep
-                             |   +-- butter NN pobj
-                             +-- by IN prep
-                                 +-- man NN pobj
-                                     +-- a DT det
+         +-- being VBG auxpass
+         +-- with IN prep
+         |   +-- butter NN pobj
+         +-- by IN prep
+             +-- man NN pobj
+                 +-- a DT det
 Input: There is no parrot speaking
 Parse:
 is VBZ ROOT
@@ -9938,10 +9938,10 @@ is VBZ ROOT
      +-- speaking VBG partmod
 Input: The parrot is silent in front of the microphone
 Parse:
-silent JJ ROOT
+is VBZ ROOT
  +-- parrot NN nsubj
  |   +-- The DT det
- +-- is VBZ cop
+ +-- silent JJ acomp
  +-- in IN prep
      +-- front NN pobj
          +-- of IN prep
@@ -10420,7 +10420,7 @@ going VBG ROOT
      +-- a DT det
 Input: Some water is being casually drunk by a cat
 Parse:
-drunk JJ ROOT
+drunk VBN ROOT
  +-- water NN nsubjpass
  |   +-- Some DT det
  +-- is VBZ aux
@@ -10477,13 +10477,13 @@ playing VBG ROOT
      +-- the DT det
 Input: The intense man is a guitar player
 Parse:
-player NN ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- The DT det
  |   +-- intense JJ amod
- +-- is VBZ cop
- +-- a DT det
- +-- guitar NN nn
+ +-- player NN 
+     +-- a DT det
+     +-- guitar NN nn
 Input: One man is intensely playing a guitar
 Parse:
 playing VBG ROOT
@@ -11997,13 +11997,13 @@ playing VBG ROOT
      +-- the DT det
 Input: The man in not playing the flute
 Parse:
-man NN ROOT
- +-- The DT det
- +-- in IN prep
-     +-- playing VBG pcomp
-         +-- not RB neg
-         +-- flute NN dobj
-             +-- the DT det
+playing VBG ROOT
+ +-- man NN nsubj
+ |   +-- The DT det
+ +-- is VBZ aux
+ +-- not RB neg
+ +-- flute NN dobj
+     +-- the DT det
 Input: The man is playing the flute
 Parse:
 playing VBG ROOT
@@ -12873,10 +12873,10 @@ dancing VBG ROOT
  +-- is VBZ aux
 Input: A man is silent
 Parse:
-silent JJ ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- silent JJ acomp
 Input: A man is speaking
 Parse:
 speaking VBG ROOT
@@ -13319,10 +13319,10 @@ wearing VBG ROOT
              +-- is VBZ aux
 Input: A man is naked and standing still
 Parse:
-naked JJ ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- naked JJ acomp
  +-- and CC cc
  +-- standing VBG conj
      +-- still RB advmod
@@ -14008,13 +14008,13 @@ eating VBG ROOT
  +-- not RB neg
 Input: A man and a woman are silent
 Parse:
-silent JJ ROOT
+are VBP ROOT
  +-- man NN nsubj
  |   +-- A DT det
  |   +-- and CC cc
  |   +-- woman NN conj
  |       +-- a DT det
- +-- are VBP cop
+ +-- silent JJ acomp
 Input: A man and a woman are having a conversation
 Parse:
 having VBG ROOT
@@ -17501,10 +17501,10 @@ riding VBG ROOT
      +-- a DT det
 Input: The fish are immobile
 Parse:
-immobile JJ ROOT
+are VBP ROOT
  +-- fish NN nsubj
  |   +-- The DT det
- +-- are VBP cop
+ +-- immobile JJ acomp
 Input: A fish is swimming
 Parse:
 swimming VBG ROOT
@@ -18869,10 +18869,10 @@ singing VBG ROOT
      +-- the DT det
 Input: The man is silent and still
 Parse:
-silent JJ ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- The DT det
- +-- is VBZ cop
+ +-- silent JJ acomp
  +-- and CC cc
  +-- still RB advmod
 Input: A group of people are dancing
@@ -19544,10 +19544,10 @@ running VBG ROOT
          +-- the DT det
 Input: A man is outside and is throwing blades at a close target
 Parse:
-outside RB ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- outside RB advmod
  +-- and CC cc
  +-- throwing VBG conj
      +-- is VBZ aux
@@ -19558,10 +19558,10 @@ outside RB ROOT
              +-- close JJ amod
 Input: A man is outside and is throwing blades at a close target
 Parse:
-outside RB ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- outside RB advmod
  +-- and CC cc
  +-- throwing VBG conj
      +-- is VBZ aux
@@ -24099,15 +24099,15 @@ putting VBG ROOT
          +-- a DT det
 Input: A man is sprinkling shredded cheese on a pizza
 Parse:
-man NN ROOT
- +-- A DT det
- +-- sprinkling VBG dep
-     +-- is VBZ aux
-     +-- cheese NN dobj
-     |   +-- shredded VBN amod
-     +-- on IN prep
-         +-- pizza NN pobj
-             +-- a DT det
+sprinkling VBG dep
+ +-- man NN nsubj
+     +-- A DT det
+ +-- is VBZ aux
+ +-- cheese NN dobj
+ |   +-- shredded VBN amod
+ +-- on IN prep
+     +-- pizza NN pobj
+         +-- a DT det
 Input: A man is putting some cheese on a pizza
 Parse:
 putting VBG ROOT
@@ -24296,12 +24296,12 @@ cleaning VBG ROOT
      +-- the DT det
 Input: A woman is deep frying food
 Parse:
-food NN ROOT
+frying VBG ROOT
  +-- woman NN nsubj
  |   +-- A DT det
  +-- is VBZ cop
  +-- deep JJ amod
- +-- frying VBG amod
+ +-- food NN pobj
 Input: Some food is being fried by a woman
 Parse:
 fried VBN ROOT
@@ -24380,10 +24380,10 @@ saying VBG ROOT
      +-- a DT det
 Input: The child is silent
 Parse:
-silent JJ ROOT
+is VBZ ROOT
  +-- child NN nsubj
  |   +-- The DT det
- +-- is VBZ cop
+ +-- silent JJ acomp
 Input: A child is talking
 Parse:
 talking VBG ROOT
@@ -28922,18 +28922,18 @@ wading VBG ROOT
          +-- the DT det
 Input: Two people are standing in the ocean and looking at the sunset
 Parse:
-people NNS ROOT
- +-- Two CD num
- +-- standing VBG dep
-     +-- are VBP aux
-     +-- in IN prep
-     |   +-- ocean NN pobj
-     |       +-- the DT det
-     +-- and CC cc
-     +-- looking VBG conj
-         +-- at IN prep
-             +-- sunset NN pobj
-                 +-- the DT det
+standing VBG ROOT
+ +-- people NNS nsubj
+ |   +-- Two CD num
+ +-- are VBP aux
+ +-- in IN prep
+ |   +-- ocean NN pobj
+ |       +-- the DT det
+ +-- and CC cc
+ +-- looking VBG conj
+     +-- at IN prep
+         +-- sunset NN pobj
+             +-- the DT det
 Input: Two people are wading through the water
 Parse:
 wading VBG ROOT
@@ -28945,16 +28945,17 @@ wading VBG ROOT
          +-- the DT det
 Input: Two people are standing in the ocean and watching the sunset
 Parse:
-people NNS ROOT
- +-- Two CD num
- +-- standing VBG dep
-     +-- are VBP aux
-     +-- in IN prep
-     |   +-- ocean NN pobj
-     |       +-- the DT det
-     +-- and CC cc
-     +-- watching VBG conj
-         +-- sunset NN dobj
+standing VBG ROOT
+ +-- people NNS nsubj
+ |   +-- Two CD num
+ +-- are VBP aux
+ +-- in IN prep
+ |   +-- ocean NN pobj
+ |       +-- the DT det
+ +-- and CC cc
+ +-- looking VBG conj
+     +-- at IN prep
+         +-- sunset NN pobj
              +-- the DT det
 Input: A race car driver is standing up and pointing his hand at the sky
 Parse:
@@ -30895,14 +30896,14 @@ wearing VBG ROOT
      +-- is VBZ aux
 Input: A little boy is topless and is serious
 Parse:
-topless JJ ROOT
+is VBZ ROOT
  +-- boy NN nsubj
  |   +-- A DT det
  |   +-- little JJ amod
- +-- is VBZ cop
+ +-- topless JJ acomp
  +-- and CC cc
- +-- serious JJ conj
-     +-- is VBZ cop
+ +-- is VBZ conj
+     +-- serious JJ acomp
 Input: A little boy is wearing a yellow tank top and is laughing
 Parse:
 wearing VBG ROOT
@@ -31114,19 +31115,19 @@ is VBZ ROOT
                  +-- her PRP$ pobj
 Input: A picture of himself and another guy is being taken by the man
 Parse:
-picture NN ROOT
- +-- A DT det
- +-- of IN prep
- |   +-- himself PRP pobj
- +-- and CC cc
- +-- taken VBN conj
-     +-- guy NN nsubjpass
+taken VBN ROOT
+ +-- picture NN nsubjpass
+     +-- A DT det
+     +-- of IN prep
+     |   +-- himself PRP pobj
+     +-- and CC cc
+     +-- guy NN conj
      |   +-- another DT det
-     +-- is VBZ aux
-     +-- being VBG auxpass
-     +-- by IN prep
-         +-- man NN pobj
-             +-- the DT det
+ +-- is VBZ aux
+ +-- being VBG auxpass
+ +-- by IN prep
+     +-- man NN pobj
+         +-- the DT det
 Input: The man is taking a picture of himself and another guy
 Parse:
 taking VBG ROOT
@@ -31427,17 +31428,17 @@ wearing VBG ROOT
          +-- the DT det
 Input: A hockey player in a yellow jersey is guarding the goal
 Parse:
-player NN ROOT
- +-- A DT det
- +-- hockey NN nn
- +-- guarding VBG rcmod
-     +-- in IN prep
-     |   +-- jersey NN pobj
-     |       +-- a DT det
-     |       +-- yellow JJ amod
-     +-- is VBZ aux
-     +-- goal NN dobj
-         +-- the DT det
+guarding VBG ROOT
+ +-- player NN nsubj
+ |   +-- A DT det
+ |   +-- hockey NN nn
+ |   +-- in IN prep
+ |   |   +-- jersey NN pobj
+ |   |       +-- a DT det
+ |   |       +-- yellow JJ amod
+ +-- is VBZ aux
+ +-- goal NN dobj
+     +-- the DT det
 Input: A young child is standing in front of some trees
 Parse:
 standing VBG ROOT
@@ -33224,17 +33225,17 @@ flying VBG ROOT
          +-- some DT det
 Input: A large stream is full of rocks , ducks and flies
 Parse:
-full JJ ROOT
+is VBZ cop
  +-- stream NN nsubj
  |   +-- A DT det
  |   +-- large JJ amod
- +-- is VBZ cop
- +-- of IN prep
-     +-- rocks NNS pobj
-         +-- , , punct
-         +-- ducks NNS conj
-         +-- and CC cc
-         +-- flies NNS conj
+ +-- full JJ acomp
+     +-- of IN prep
+         +-- rocks NNS pobj
+             +-- , , punct
+             +-- ducks NNS conj
+             +-- and CC cc
+             +-- flies NNS conj
 Input: The kids are not chasing each other in the sand
 Parse:
 chasing VBG ROOT
@@ -33919,54 +33920,54 @@ posing VBG ROOT
          +-- a DT det
 Input: Two men , a woman , and two young boys are standing in front of a large gathering of people outside a building
 Parse:
-men NNS ROOT
- +-- Two CD num
- +-- , , punct
- +-- woman NN conj
- |   +-- a DT det
- +-- , , punct
- +-- and CC cc
- +-- standing VBG conj
-     +-- boys NNS nsubj
-     |   +-- two CD num
-     |   +-- young JJ amod
-     +-- are VBP aux
-     +-- in IN prep
-         +-- front NN pobj
-             +-- of IN prep
-                 +-- gathering NN pobj
-                     +-- a DT det
-                     +-- large JJ amod
-                     +-- of IN prep
-                         +-- people NNS pobj
-                             +-- outside IN prep
-                                 +-- building NN pobj
-                                     +-- a DT det
+standing VBG ROOT
+ +-- men NNS nsubj
+ |   +-- Two CD num
+ |   +-- , , punct
+ |   +-- woman NN conj
+ |   |   +-- a DT det
+ |   +-- , , punct
+ |   +-- and CC cc
+ |   +-- boys NNS nsubj
+ |       +-- two CD num
+ |       +-- young JJ amod
+ +-- are VBP aux
+ +-- in IN prep
+     +-- front NN pobj
+         +-- of IN prep
+             +-- gathering NN pobj
+                 +-- a DT det
+                 +-- large JJ amod
+                 +-- of IN prep
+                     +-- people NNS pobj
+                         +-- outside IN prep
+                             +-- building NN pobj
+                                 +-- a DT det
 Input: Two men , a woman , and two young boys are standing in front of a large gathering of people outside a building
 Parse:
-men NNS ROOT
- +-- Two CD num
- +-- , , punct
- +-- woman NN conj
- |   +-- a DT det
- +-- , , punct
- +-- and CC cc
- +-- standing VBG conj
-     +-- boys NNS nsubj
-     |   +-- two CD num
-     |   +-- young JJ amod
-     +-- are VBP aux
-     +-- in IN prep
-         +-- front NN pobj
-             +-- of IN prep
-                 +-- gathering NN pobj
-                     +-- a DT det
-                     +-- large JJ amod
-                     +-- of IN prep
-                         +-- people NNS pobj
-                             +-- outside IN prep
-                                 +-- building NN pobj
-                                     +-- a DT det
+standing VBG ROOT
+ +-- men NNS nsubj
+ |   +-- Two CD num
+ |   +-- , , punct
+ |   +-- woman NN conj
+ |   |   +-- a DT det
+ |   +-- , , punct
+ |   +-- and CC cc
+ |   +-- boys NNS nsubj
+ |       +-- two CD num
+ |       +-- young JJ amod
+ +-- are VBP aux
+ +-- in IN prep
+     +-- front NN pobj
+         +-- of IN prep
+             +-- gathering NN pobj
+                 +-- a DT det
+                 +-- large JJ amod
+                 +-- of IN prep
+                     +-- people NNS pobj
+                         +-- outside IN prep
+                             +-- building NN pobj
+                                 +-- a DT det
 Input: A little girl with blond hair is smiling and sitting on a swing
 Parse:
 smiling VBG ROOT
@@ -37064,10 +37065,10 @@ wearing VBG ROOT
          +-- a DT det
 Input: A person is shirtless and is putting down the beer
 Parse:
-shirtless JJ ROOT
+is VBZ ROOT
  +-- person NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- shirtless JJ acomp
  +-- and CC cc
  +-- putting VBG conj
      +-- is VBZ aux
@@ -39083,25 +39084,25 @@ standing VBG ROOT
                  +-- sunglasses NNS conj
 Input: A person wearing grey pants is airborne on a snowboard
 Parse:
-airborne JJ ROOT
+is VBZ ROOT
  +-- person NN nsubj
  |   +-- A DT det
  |   +-- wearing VBG partmod
  |       +-- pants NNS dobj
  |           +-- grey JJ amod
- +-- is VBZ cop
+ +-- airborne JJ acomp
  +-- on IN prep
      +-- snowboard NN pobj
          +-- a DT det
 Input: A person wearing grey pants is airborne on a snowboard
 Parse:
-airborne JJ ROOT
+is VBZ ROOT
  +-- person NN nsubj
  |   +-- A DT det
  |   +-- wearing VBG partmod
  |       +-- pants NNS dobj
  |           +-- grey JJ amod
- +-- is VBZ cop
+ +-- airborne JJ acomp
  +-- on IN prep
      +-- snowboard NN pobj
          +-- a DT det
@@ -39127,13 +39128,13 @@ jumping VBG ROOT
          +-- the DT det
 Input: A person wearing grey pants is airborne on a snowboard
 Parse:
-airborne JJ ROOT
+is VBZ ROOT
  +-- person NN nsubj
  |   +-- A DT det
  |   +-- wearing VBG partmod
  |       +-- pants NNS dobj
  |           +-- grey JJ amod
- +-- is VBZ cop
+ +-- airborne JJ acomp
  +-- on IN prep
      +-- snowboard NN pobj
          +-- a DT det
@@ -39828,16 +39829,16 @@ are VBP ROOT
          +-- crowded JJ amod
 Input: Four athletes are with a woman in a crowded stadium
 Parse:
-athletes NNS ROOT
- +-- Four CD num
- +-- are VBP dep
+are VBP ROOT
+ +-- athletes NNS nsubj
+     +-- Four CD num
      +-- with IN prep
          +-- woman NN pobj
              +-- a DT det
-             +-- in IN prep
-                 +-- stadium NN pobj
-                     +-- a DT det
-                     +-- crowded JJ amod
+ +-- in IN prep
+     +-- stadium NN pobj
+         +-- a DT det
+         +-- crowded JJ amod
 Input: A person in pink is running onto the field
 Parse:
 running VBG ROOT
@@ -39884,33 +39885,33 @@ is VBZ ROOT
              +-- fur JJ amod
 Input: An elegant woman is inside a crowd of people and is looking down
 Parse:
-crowd NN ROOT
+is VBZ ROOT
  +-- woman NN nsubj
  |   +-- An DT det
  |   +-- elegant JJ amod
- +-- is VBZ cop
  +-- inside IN advmod
- +-- a DT det
- +-- of IN prep
- |   +-- people NNS pobj
+ +-- crowd NN pobj
+     +-- a DT det
+     +-- of IN prep
+     |   +-- people NNS pobj
  +-- and CC cc
  +-- looking VBG conj
      +-- is VBZ aux
      +-- down RP advmod
 Input: A woman dressed in elegant clothing is inside a crowd of people and is looking up
 Parse:
-crowd NN ROOT
+is VBZ ROOT
  +-- woman NN nsubj
  |   +-- A DT det
  |   +-- dressed VBN partmod
  |       +-- in IN prep
  |           +-- clothing NN pobj
  |               +-- elegant JJ amod
- +-- is VBZ cop
  +-- inside IN advmod
- +-- a DT det
- +-- of IN prep
- |   +-- people NNS pobj
+ +-- crowd NN pobj
+ |   +-- a DT det
+ |   +-- of IN prep
+ |       +-- people NNS pobj
  +-- and CC cc
  +-- looking VBG conj
      +-- is VBZ aux
@@ -40088,12 +40089,12 @@ are VBP ROOT
      +-- is VBZ aux
 Input: Two poodles are in the snow and one is jumping high
 Parse:
-poodles NNS ROOT
- +-- Two CD num
- +-- are VBP partmod
- |   +-- in IN prep
- |       +-- snow NN pobj
- |           +-- the DT det
+are VBP ROOT
+ +-- poodles NNS nsubj
+ |   +-- Two CD num
+ +-- in IN prep
+ |   +-- snow NN pobj
+ |       +-- the DT det
  +-- and CC cc
  +-- jumping VBG conj
      +-- one CD nsubj
@@ -40101,12 +40102,12 @@ poodles NNS ROOT
      +-- high JJ advmod
 Input: Two poodles are in the snow and one is jumping high
 Parse:
-poodles NNS ROOT
- +-- Two CD num
- +-- are VBP partmod
- |   +-- in IN prep
- |       +-- snow NN pobj
- |           +-- the DT det
+are VBP ROOT
+ +-- poodles NNS nsubj
+ |   +-- Two CD num
+ +-- in IN prep
+ |   +-- snow NN pobj
+ |       +-- the DT det
  +-- and CC cc
  +-- jumping VBG conj
      +-- one CD nsubj
@@ -41200,7 +41201,7 @@ climbing VBG ROOT
  +-- rock NN dep
 Input: The young man is not rock climbing
 Parse:
-climbing NN ROOT
+climbing VBG ROOT
  +-- man NN nsubj
  |   +-- The DT det
  |   +-- young JJ amod
@@ -42079,11 +42080,11 @@ jumping VBG ROOT
                      +-- water NN pobj
 Input: Some bikers are getting airborne on a track near water and a skyline
 Parse:
-airborne JJ ROOT
+getting VBG ROOT
  +-- bikers NNS nsubj
  |   +-- Some DT det
  +-- are VBP aux
- +-- getting VBG dep
+ +-- airborne JJ advmod
  +-- on IN prep
      +-- track NN pobj
          +-- a DT det
@@ -42141,11 +42142,11 @@ getting VBG ROOT
                      +-- a DT det
 Input: Some bikers are getting airborne on a track near water and a skyline
 Parse:
-airborne JJ ROOT
+getting VBG ROOT
  +-- bikers NNS nsubj
  |   +-- Some DT det
  +-- are VBP aux
- +-- getting VBG dep
+ +-- airborne JJ advmod
  +-- on IN prep
      +-- track NN pobj
          +-- a DT det
@@ -42156,11 +42157,11 @@ airborne JJ ROOT
                      +-- a DT det
 Input: Some bikers are getting airborne on a track near water and a skyline
 Parse:
-airborne JJ ROOT
+getting VBG ROOT
  +-- bikers NNS nsubj
  |   +-- Some DT det
  +-- are VBP aux
- +-- getting VBG dep
+ +-- airborne JJ advmod
  +-- on IN prep
      +-- track NN pobj
          +-- a DT det
@@ -42266,21 +42267,21 @@ wearing VBG ROOT
          +-- red JJ amod
 Input: A man in a motocross uniform is wearing a helmet and rides a red motorcycle
 Parse:
-man NN ROOT
+wearing VBG ROOT
+ +-- man NN nsubj
  +-- A DT det
- +-- wearing VBG rcmod
-     +-- in IN prep
-     |   +-- uniform NN pobj
-     |       +-- a DT det
-     |       +-- motocross JJ amod
-     +-- is VBZ aux
-     +-- helmet NN dobj
-     |   +-- a DT det
-     +-- and CC cc
-     +-- rides VBZ conj
-         +-- motorcycle NN dobj
-             +-- a DT det
-             +-- red JJ amod
+ |   +-- in IN prep
+ |       +-- uniform NN pobj
+ |           +-- a DT det
+ |           +-- motocross JJ amod
+ +-- is VBZ aux
+ +-- helmet NN dobj
+ |   +-- a DT det
+ +-- and CC cc
+ +-- rides VBZ conj
+     +-- motorcycle NN dobj
+         +-- a DT det
+         +-- red JJ amod
 Input: A person in a motocross uniform is wearing a helmet and rides a red motorcycle
 Parse:
 wearing VBG ROOT
@@ -43863,14 +43864,14 @@ playing VBG ROOT
                      +-- the DT det
 Input: A cyclist on a yellow bike is airborne
 Parse:
-airborne JJ ROOT
+is VBZ ROOT
  +-- cyclist NN nsubj
  |   +-- A DT det
  |   +-- on IN prep
  |       +-- bike NN pobj
  |           +-- a DT det
  |           +-- yellow JJ amod
- +-- is VBZ cop
+ +-- airborne JJ acomp
 Input: There is no cyclist on a yellow bike airborne
 Parse:
 is VBZ ROOT
@@ -43910,24 +43911,24 @@ taking VBG ROOT
      +-- a DT det
 Input: A cyclist on a yellow bike is airborne
 Parse:
-airborne JJ ROOT
+is VBZ ROOT
  +-- cyclist NN nsubj
  |   +-- A DT det
  |   +-- on IN prep
  |       +-- bike NN pobj
  |           +-- a DT det
  |           +-- yellow JJ amod
- +-- is VBZ cop
+ +-- airborne JJ acomp
 Input: A cyclist on a yellow bike is airborne
 Parse:
-airborne JJ ROOT
+is VBZ ROOT
  +-- cyclist NN nsubj
  |   +-- A DT det
  |   +-- on IN prep
  |       +-- bike NN pobj
  |           +-- a DT det
  |           +-- yellow JJ amod
- +-- is VBZ cop
+ +-- airborne JJ acomp
 Input: A man is wearing a beret and is riding the bicycle on a recreation trail
 Parse:
 wearing VBG ROOT
@@ -46448,18 +46449,18 @@ jumping VBG ROOT
          +-- the DT det
 Input: Two young girls are wearing hats and sticking their colored tongues out
 Parse:
-girls NNS ROOT
- +-- Two CD num
- +-- young JJ amod
- +-- wearing VBG dep
-     +-- are VBP aux
-     +-- hats NNS dobj
-     +-- and CC cc
-     +-- sticking VBG conj
-         +-- tongues NNS dobj
-         |   +-- their PRP$ poss
-         |   +-- colored VBN amod
-         +-- out RP prt
+wearing VBG ROOT
+ +-- girls NNS nsubj
+ |   +-- Two CD num
+ |   +-- young JJ amod
+ +-- are VBP aux
+ |   +-- hats NNS dobj
+ +-- and CC cc
+ +-- sticking VBG conj
+     +-- tongues NNS dobj
+     |   +-- their PRP$ poss
+     |   +-- colored VBN amod
+     +-- out RP prt
 Input: Two kids are sticking out blue and green colored tongues
 Parse:
 sticking VBG ROOT
@@ -46814,34 +46815,34 @@ waiting VBG ROOT
                                  +-- some DT det
 Input: A boy next to some buckets of rags is not holding an object
 Parse:
-boy NN ROOT
- +-- A DT det
- +-- next RB advmod
- |   +-- to IN prep
- |       +-- buckets NNS pobj
- |           +-- some DT det
- |           +-- of IN prep
- |               +-- rags NNS pobj
- +-- holding VBG dep
-     +-- is VBZ aux
-     +-- not RB neg
-     +-- object NN dobj
-         +-- an DT det
+holding VBG ROOT
+ +-- boy NN nsubj
+ |   +-- A DT det
+ |   +-- next RB advmod
+ |       +-- to IN prep
+ |           +-- buckets NNS pobj
+ |               +-- some DT det
+ |               +-- of IN prep
+ |                   +-- rags NNS pobj
+ +-- is VBZ aux
+ +-- not RB neg
+ +-- object NN dobj
+     +-- an DT det
 Input: A boy next to some buckets of rags is not holding an object
 Parse:
-boy NN ROOT
- +-- A DT det
- +-- next RB advmod
- |   +-- to IN prep
- |       +-- buckets NNS pobj
- |           +-- some DT det
- |           +-- of IN prep
- |               +-- rags NNS pobj
- +-- holding VBG dep
-     +-- is VBZ aux
-     +-- not RB neg
-     +-- object NN dobj
-         +-- an DT det
+holding VBG ROOT
+ +-- boy NN nsubj
+ |   +-- A DT det
+ |   +-- next RB advmod
+ |       +-- to IN prep
+ |           +-- buckets NNS pobj
+ |               +-- some DT det
+ |               +-- of IN prep
+ |                   +-- rags NNS pobj
+ +-- is VBZ aux
+ +-- not RB neg
+ +-- object NN dobj
+     +-- an DT det
 Input: A young black child is waiting on the edge of a body of water near some buckets
 Parse:
 waiting VBG ROOT
@@ -48542,23 +48543,23 @@ wearing VBG ROOT
              +-- the DT det
 Input: The man dressed in leather chaps and a purple shirt is standing in front of someone lookers
 Parse:
-man NN ROOT
- +-- The DT det
- +-- dressed VBN dep
-     +-- in IN prep
-     |   +-- chaps NNS pobj
-     |       +-- leather NN nn
-     +-- and CC cc
-     +-- standing VBG conj
-         +-- shirt NN nsubj
-         |   +-- a DT det
-         |   +-- purple JJ amod
-         +-- is VBZ aux
-         +-- in IN prep
-             +-- front NN pobj
-                 +-- of IN prep
-                     +-- lookers NNS pobj
-                         +-- someone NN nn
+standing VBG ROOT
+ +-- man NN nsubj
+ |   +-- The DT det
+ |   +-- dressed VBN dep
+ |       +-- in IN prep
+ |       |   +-- chaps NNS pobj
+ |       |       +-- leather NN pobj
+ |       +-- and CC cc
+ |               +-- shirt NN nsubj
+ |               +-- a DT det
+ |               +-- purple JJ amod
+ +-- is VBZ aux
+ +-- in IN prep
+     +-- front NN pobj
+         +-- of IN prep
+             +-- lookers NNS pobj
+                 +-- someone DT det
 Input: A man is not wearing a purple shirt and black leather chaps and is posing for the camera
 Parse:
 wearing VBG ROOT
@@ -51130,17 +51131,17 @@ running VBG ROOT
                  +-- a DT det
 Input: Two women are wearing bikinis and are walking on the sand
 Parse:
-women NNS ROOT
- +-- Two CD num
- +-- wearing VBG dep
+wearing VBG ROOT
+ +-- women NNS nsubj
+     +-- Two CD num
+ +-- are VBP aux
+ +-- bikinis NNS dobj
+ +-- and CC cc
+ +-- walking VBG conj
      +-- are VBP aux
-     +-- bikinis NNS dobj
-     +-- and CC cc
-     +-- walking VBG conj
-         +-- are VBP aux
-         +-- on IN prep
-             +-- sand NN pobj
-                 +-- the DT det
+     +-- on IN prep
+         +-- sand NN pobj
+             +-- the DT det
 Input: There is no man tying a shoe
 Parse:
 is VBZ ROOT
@@ -53637,7 +53638,7 @@ dancing VBG ROOT
                  +-- sound JJ amod
 Input: The equipment in front of the blond dancing girl is sound
 Parse:
-sound JJ ROOT
+is VBZ ROOT
  +-- equipment NN nsubj
  |   +-- The DT det
  |   +-- in IN prep
@@ -53646,8 +53647,8 @@ sound JJ ROOT
  |               +-- girl NN pobj
  |                   +-- the DT det
  |                   +-- dancing NN nn
- |                       +-- blond JJ amod
- +-- is VBZ cop
+ |                   +-- blond JJ amod
+ +-- sound JJ attr
 Input: The children of a family are playing and waiting
 Parse:
 playing VBG ROOT
@@ -54658,19 +54659,19 @@ sitting VBG ROOT
          +-- a DT det
 Input: A sitting man is busy writing something in an area covered by paint
 Parse:
-busy JJ ROOT
+is VBZ cop
  +-- man NN nsubj
  |   +-- A DT det
  |   +-- sitting VBG amod
- +-- is VBZ cop
- +-- writing VBG dep
-     +-- something NN dobj
-         +-- in IN prep
-             +-- area NN pobj
-                 +-- an DT det
-                 +-- covered VBN partmod
-                     +-- by IN prep
-                         +-- paint NN pobj
+ +-- busy JJ acomp
+     +-- writing VBG dep
+         +-- something NN dobj
+             +-- in IN prep
+                 +-- area NN pobj
+                     +-- an DT det
+                     +-- covered VBN partmod
+                         +-- by IN prep
+                             +-- paint NN pobj
 Input: A man is wearing clothes that are covered with paint and is sitting outside in a busy area writing something
 Parse:
 wearing VBG ROOT
@@ -54764,22 +54765,22 @@ are VBP ROOT
                  +-- snowy JJ amod
 Input: Two men are holding bikes and standing on the side of a road covered of snow
 Parse:
-men NNS ROOT
- +-- Two CD num
- +-- holding VBG dep
-     +-- are VBP aux
-     +-- bikes NNS dobj
-     +-- and CC cc
-     +-- standing VBG conj
-         +-- on IN prep
-             +-- side NN pobj
-                 +-- the DT det
-                 +-- of IN prep
-                     +-- road NN pobj
-                         +-- a DT det
-                         +-- covered VBN partmod
-                             +-- of IN prep
-                                 +-- snow NN pobj
+holding VBG ROOT
+ +-- men NNS nsubj
+ |   +-- Two CD num
+ +-- are VBP aux
+ +-- bikes NNS dobj
+ +-- and CC cc
+ +-- standing VBG conj
+     +-- on IN prep
+         +-- side NN pobj
+             +-- the DT det
+             +-- of IN prep
+                 +-- road NN pobj
+                     +-- a DT det
+                     +-- covered VBN partmod
+                         +-- of IN prep
+                             +-- snow NN pobj
 Input: Two men are taking a break from a trip on a road covered by snow
 Parse:
 taking VBG ROOT
@@ -55739,22 +55740,22 @@ sitting VBG ROOT
                          +-- the DT det
 Input: A dog , which is brown , and a black one are running in the grass
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- , , punct
- +-- brown JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- , , punct
-     +-- and CC cc
-     +-- running VBG conj
-         +-- one CD nsubj
-         |   +-- a DT det
-         |   +-- black JJ amod
-         +-- are VBP aux
-         +-- in IN prep
-             +-- grass NN pobj
-                 +-- the DT det
+running VBG ROOT
+ +-- dog NN nsubj
+ |    +-- A DT det
+ |    +-- , , punct
+ |    +-- is VBZ rcmod
+ |    |   +-- which WDT nsubj
+ |    |   +-- brown JJ acomp  
+ |    +-- , , punct
+ |    +-- and CC cc
+ |    +-- one NN conj
+ |    |   +-- a DT det
+ |    |   +-- black JJ amod
+ +-- are VBP aux
+ +-- in IN prep
+     +-- grass NN pobj
+         +-- the DT det
 Input: A dark black dog and a light brown dog are fighting in the backyard
 Parse:
 fighting VBG ROOT
@@ -55789,22 +55790,22 @@ playing VBG ROOT
          +-- the DT det
 Input: A dog , which is brown , and a black one are running in the grass
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- , , punct
- +-- brown JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- , , punct
-     +-- and CC cc
-     +-- running VBG conj
-         +-- one CD nsubj
-         |   +-- a DT det
-         |   +-- black JJ amod
-         +-- are VBP aux
-         +-- in IN prep
-             +-- grass NN pobj
-                 +-- the DT det
+running VBG ROOT
+ +-- dog NN nsubj
+ |    +-- A DT det
+ |    +-- , , punct
+ |    +-- is VBZ rcmod
+ |    |   +-- which WDT nsubj
+ |    |   +-- brown JJ acomp  
+ |    +-- , , punct
+ |    +-- and CC cc
+ |    +-- one NN conj
+ |    |   +-- a DT det
+ |    |   +-- black JJ amod
+ +-- are VBP aux
+ +-- in IN prep
+     +-- grass NN pobj
+         +-- the DT det
 Input: A dark black dog and a light brown dog are playing in the backyard
 Parse:
 playing VBG ROOT
@@ -56282,7 +56283,7 @@ is VBZ ROOT
          +-- smiling VBG conj
 Input: A red sweatshirt with a smiling lady upon it is suited to be worn with light brown hair , earrings and a necklace
 Parse:
-suited JJ ROOT
+suited VBN ROOT
  +-- sweatshirt NN nsubj
  |   +-- A DT det
  |   +-- red JJ amod
@@ -56747,24 +56748,25 @@ performing VBG ROOT
          +-- the DT det
 Input: A dog , which is black , and a white one are staring at each other in the street
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- , , punct
- +-- black JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- , , punct
-     +-- and CC cc
-     +-- staring VBG conj
-         +-- one CD nsubj
-         |   +-- a DT det
-         |   +-- white JJ amod
-         +-- are VBP aux
-         +-- at IN prep
-         |   +-- other JJ pobj
-         |       +-- each DT det
-         +-- in IN prep
-             +-- street NN pobj
+staring VBG ROOT
+ +-- dog NN nsubj
+ |   +-- A DT det
+ |   +-- , , punct
+ |   +-- black JJ rcmod
+ |   |   +-- which WDT nsubj
+ |   |   +-- is VBZ cop
+ |   +-- , , punct
+ |   +-- and CC cc
+ |   +-- one CD nsubj
+ |       +-- a DT det
+ |       +-- white JJ amod
+ +-- are VBP aux
+ +-- at IN prep
+     +-- other JJ dobj
+     |   +-- each DT det
+     +-- in IN prep
+         +-- street NN pobj
+             +-- the DT det
                  +-- the DT det
 Input: Two dogs of different breeds are looking at each other across a street
 Parse:
@@ -56783,24 +56785,25 @@ looking VBG ROOT
          +-- a DT det
 Input: A dog , which is black , and a white one are staring at each other in the street
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- , , punct
- +-- black JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- , , punct
-     +-- and CC cc
-     +-- staring VBG conj
-         +-- one CD nsubj
-         |   +-- a DT det
-         |   +-- white JJ amod
-         +-- are VBP aux
-         +-- at IN prep
-         |   +-- other JJ pobj
-         |       +-- each DT det
-         +-- in IN prep
-             +-- street NN pobj
+staring VBG ROOT
+ +-- dog NN nsubj
+ |   +-- A DT det
+ |   +-- , , punct
+ |   +-- black JJ rcmod
+ |   |   +-- which WDT nsubj
+ |   |   +-- is VBZ cop
+ |   +-- , , punct
+ |   +-- and CC cc
+ |   +-- one CD nsubj
+ |       +-- a DT det
+ |       +-- white JJ amod
+ +-- are VBP aux
+ +-- at IN prep
+     +-- other JJ dobj
+     |   +-- each DT det
+     +-- in IN prep
+         +-- street NN pobj
+             +-- the DT det
                  +-- the DT det
 Input: There are no dogs of different breeds looking at each other across a street
 Parse:
@@ -56834,24 +56837,24 @@ looked VBN ROOT
  +-- at IN prep
 Input: A dog , which is black , and a white one are ignoring each other in the street
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- , , punct
- +-- black JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- , , punct
-     +-- and CC cc
-     +-- ignoring VBG conj
-         +-- one CD nsubj
-         |   +-- a DT det
-         |   +-- white JJ amod
-         +-- are VBP aux
-         +-- other JJ dobj
-         |   +-- each DT det
-         +-- in IN prep
-             +-- street NN pobj
-                 +-- the DT det
+ignoring VBG ROOT
+ +-- dog NN nsubj
+ |   +-- A DT det
+ |   +-- , , punct
+ |   +-- black JJ rcmod
+ |   |   +-- which WDT nsubj
+ |   |   +-- is VBZ cop
+ |   +-- , , punct
+ |   +-- and CC cc
+ |   +-- one CD nsubj
+ |       +-- a DT det
+ |       +-- white JJ amod
+ +-- are VBP aux
+ +-- other JJ dobj
+ |   +-- each DT det
+ +-- in IN prep
+     +-- street NN pobj
+         +-- the DT det
 Input: Two dogs of different breeds are looking at each other across a street
 Parse:
 looking VBG ROOT
@@ -56887,23 +56890,23 @@ carrying VBG ROOT
  +-- . . punct
 Input: A dog next to a tree , which is probably a pine , is biting a bucket
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- next RB advmod
- |   +-- to IN prep
- |       +-- tree NN pobj
- |           +-- a DT det
- |           +-- , , punct
- |           +-- pine NN rcmod
- |               +-- which WDT nsubj
- |               +-- is VBZ cop
- |               +-- probably RB advmod
- |               +-- a DT det
- +-- , , punct
- +-- biting VBG dep
-     +-- is VBZ aux
-     +-- bucket NN dobj
-         +-- a DT det
+biting VBG ROOT
+ +-- dog NN nsubj
+ |   +-- A DT det
+ |   +-- next JJ amod
+ |   |   +-- to IN prep
+ |   |       +-- tree NN pobj
+ |   |           +-- a DT det
+ |   |           +-- , , punct
+ |   |           +-- is VBZ rcmod
+ |   |               +-- which WDT nsubj
+ |   |               +-- probably RB advmod
+ |   |               +-- pine NN attr
+ |   |                   +-- a DT det                 
+ |   +-- , , punct
+ +-- is VBZ aux
+ +-- bucket NN dobj
+     +-- a DT det
 Input: A dog in a bucket is biting a tree which is probably a pine
 Parse:
 biting VBG ROOT
@@ -56922,23 +56925,23 @@ biting VBG ROOT
          +-- a DT det
 Input: A dog next to a tree , which is probably a pine , is biting a bucket
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- next RB advmod
- |   +-- to IN prep
- |       +-- tree NN pobj
- |           +-- a DT det
- |           +-- , , punct
- |           +-- pine NN rcmod
- |               +-- which WDT nsubj
- |               +-- is VBZ cop
- |               +-- probably RB advmod
- |               +-- a DT det
- +-- , , punct
- +-- biting VBG dep
-     +-- is VBZ aux
-     +-- bucket NN dobj
-         +-- a DT det
+biting VBG ROOT
+ +-- dog NN nsubj
+ |   +-- A DT det
+ |   +-- next JJ amod
+ |   |   +-- to IN prep
+ |   |       +-- tree NN pobj
+ |   |           +-- a DT det
+ |   |           +-- , , punct
+ |   |           +-- is VBZ rcmod
+ |   |               +-- which WDT nsubj
+ |   |               +-- probably RB advmod
+ |   |               +-- pine NN attr
+ |   |                   +-- a DT det                 
+ |   +-- , , punct
+ +-- is VBZ aux
+ +-- bucket NN dobj
+     +-- a DT det
 Input: Two people are sitting comfortably on the bench
 Parse:
 sitting VBG ROOT
@@ -57185,18 +57188,18 @@ leaving VBG ROOT
          +-- the DT det
 Input: A classroom is full of students
 Parse:
-full JJ ROOT
+is VBZ ROOT
  +-- classroom NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
- +-- of IN prep
-     +-- students NNS pobj
+ +-- full JJ acomp
+     +-- of IN prep
+         +-- students NNS pobj
 Input: A classroom is empty
 Parse:
-empty JJ ROOT
+is VBZ ROOT
  +-- classroom NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- empty JJ acomp
 Input: The presentation is being watched by a classroom of students
 Parse:
 watched VBN ROOT
@@ -57211,12 +57214,12 @@ watched VBN ROOT
              +-- students NNS pobj
 Input: A classroom is full of students
 Parse:
-full JJ ROOT
+is VBZ ROOT
  +-- classroom NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
- +-- of IN prep
-     +-- students NNS pobj
+ +-- full JJ acomp
+     +-- of IN prep
+         +-- students NNS pobj
 Input: The students are filling the classroom
 Parse:
 filling VBG ROOT
@@ -57227,12 +57230,12 @@ filling VBG ROOT
      +-- the DT det
 Input: A classroom is full of students
 Parse:
-full JJ ROOT
+is VBZ ROOT
  +-- classroom NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
- +-- of IN prep
-     +-- students NNS pobj
+ +-- full JJ acomp
+     +-- of IN prep
+         +-- students NNS pobj
 Input: The kid is still in the snow
 Parse:
 is VBZ ROOT
@@ -57244,13 +57247,13 @@ is VBZ ROOT
          +-- the DT det
 Input: A snow slide is full of kids
 Parse:
-full JJ ROOT
+is VBZ ROOT
  +-- slide NN nsubj
  |   +-- A DT det
  |   +-- snow NN nn
- +-- is VBZ cop
- +-- of IN prep
-     +-- kids NNS pobj
+ +-- full JJ acomp
+     +-- of IN prep
+         +-- kids NNS pobj
 Input: A boy on a red and black slide is wearing a jacket and a hat and has knees which are covered in snow
 Parse:
 wearing VBG ROOT
@@ -57441,12 +57444,12 @@ walking VBG ROOT
                  +-- the DT det
 Input: Two people are in the snow holding two dogs with golden coats
 Parse:
-people NNS ROOT
- +-- Two CD num
- +-- are VBP partmod
- |   +-- in IN prep
- |       +-- snow NN pobj
- |           +-- the DT det
+are VBP ROOT
+ +-- people NNS nsubj
+ |   +-- Two CD num
+ +-- in IN prep
+ |   +-- snow NN pobj
+ |       +-- the DT det
  +-- holding VBG partmod
      +-- dogs NNS dobj
      |   +-- two CD num
@@ -57499,12 +57502,12 @@ are VBZ ROOT
  +-- . . punct
 Input: Two people are in the snow holding two dogs with golden coats
 Parse:
-people NNS ROOT
- +-- Two CD num
- +-- are VBP partmod
- |   +-- in IN prep
- |       +-- snow NN pobj
- |           +-- the DT det
+are VBP ROOT
+ +-- people NNS nsubj
+ |   +-- Two CD num
+ +-- in IN prep
+ |   +-- snow NN pobj
+ |       +-- the DT det
  +-- holding VBG partmod
      +-- dogs NNS dobj
      |   +-- two CD num
@@ -57946,24 +57949,24 @@ climbing VBG ROOT
          +-- rock NN pobj
 Input: A dog , which has a black coat , and a white dog are running on the grass
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- , , punct
- +-- has VBZ rcmod
-     +-- which WDT nsubj
-     +-- coat NN dobj
-     |   +-- a DT det
-     |   +-- black JJ amod
-     +-- , , punct
-     +-- and CC cc
-     +-- running VBG conj
-         +-- dog NN nsubj
-         |   +-- a DT det
-         |   +-- white JJ amod
-         +-- are VBP aux
-         +-- on IN prep
-             +-- grass NN pobj
-                 +-- the DT det
+running VBG conj
+ +-- dog NN nsubj
+ |   +-- A DT det
+ |   +-- , , punct
+ |   +-- has VBZ rcmod
+ |   |   +-- which WDT nsubj
+ |   |   +-- coat NN dobj
+ |   |   |   +-- a DT det
+ |   |   |   +-- black JJ amod
+ |   |   +-- , , punct
+ |   +-- and CC cc
+ |       +-- dog NN nsubj
+ |       |   +-- a DT det
+ |       |   +-- white JJ amod
+ +-- are VBP aux
+ +-- on IN prep
+     +-- grass NN pobj
+         +-- the DT det
 Input: A black and a white dog are joyfully running on the grass
 Parse:
 running VBG ROOT
@@ -57980,21 +57983,21 @@ running VBG ROOT
          +-- the DT det
 Input: One white dog and one black one are running side by side on the grass
 Parse:
-dog NN ROOT
- +-- One CD num
- +-- white JJ amod
- +-- and CC cc
- +-- running VBG conj
-     +-- one CD nsubj
-     |   +-- one CD num
-     |   +-- black JJ amod
-     +-- are VBP aux
-     +-- side NN dobj
-     |   +-- by IN prep
-     |       +-- side NN pobj
-     +-- on IN prep
-         +-- grass NN pobj
-             +-- the DT det
+running VBG ROOT
+ +-- dog NN nsubj
+ |   +-- One CD num
+ |   +-- white JJ amod
+ |   +-- and CC cc
+ |       +-- one CD nsubj
+ |       |   +-- one CD num
+ |       |   +-- black JJ amod
+ +-- are VBP aux
+ +-- side NN dobj
+ |   +-- by IN prep
+ |       +-- side NN pobj
+ +-- on IN prep
+     +-- grass NN pobj
+         +-- the DT det
 Input: There is no dog joyfully running on the grass
 Parse:
 is VBZ ROOT
@@ -58008,21 +58011,21 @@ is VBZ ROOT
                  +-- the DT det
 Input: One white dog and one black one are running side by side on the grass
 Parse:
-dog NN ROOT
- +-- One CD num
- +-- white JJ amod
- +-- and CC cc
- +-- running VBG conj
-     +-- one CD nsubj
-     |   +-- one CD num
-     |   +-- black JJ amod
-     +-- are VBP aux
-     +-- side NN dobj
-     |   +-- by IN prep
-     |       +-- side NN pobj
-     +-- on IN prep
-         +-- grass NN pobj
-             +-- the DT det
+running VBG ROOT
+ +-- dog NN nsubj
+ |   +-- One CD num
+ |   +-- white JJ amod
+ |   +-- and CC cc
+ |       +-- one CD nsubj
+ |       |   +-- one CD num
+ |       |   +-- black JJ amod
+ +-- are VBP aux
+ +-- side NN dobj
+ |   +-- by IN prep
+ |       +-- side NN pobj
+ +-- on IN prep
+     +-- grass NN pobj
+         +-- the DT det
 Input: There are n't many people in the ice skating park
 Parse:
 are VBP ROOT
@@ -58037,26 +58040,26 @@ are VBP ROOT
                  +-- ice NN nn
 Input: An ice skating rink placed outdoors is empty
 Parse:
-empty JJ ROOT
+is VBZ ROOT
  +-- rink NN nsubj
  |   +-- An DT det
  |   +-- skating NN nn
  |   |   +-- ice NN nn
  |   +-- placed VBD partmod
  |       +-- outdoors RB advmod
- +-- is VBZ cop
+ +-- empty JJ acomp
 Input: An ice skating rink placed outdoors is full of people
 Parse:
-full JJ ROOT
+is VBZ ROOT
  +-- rink NN nsubj
  |   +-- An DT det
  |   +-- skating NN nn
  |   |   +-- ice NN nn
- |   +-- placed VBD partmod
+ |   +-- placed VBD vmod
  |       +-- outdoors RB advmod
- +-- is VBZ cop
- +-- of IN prep
-     +-- people NNS pobj
+ +-- full JJ amod
+     +-- of IN prep
+         +-- people NNS pobj
 Input: A girl in a uniform , which is blue , is raising her arm .
 Parse:
 raising VBG ROOT
@@ -58899,35 +58902,35 @@ standing VBG ROOT
                  +-- outdoors RB rcmod
                      +-- which WDT nsubj
                      +-- are VBP cop
-Input: A boy in a red shirt is in front a wall , which is long and blue , and is suspiciously raising an eyebrow at the camera
+Input: A boy in a red shirt is in front of a wall , which is long and blue , and is suspiciously raising an eyebrow at the camera
 Parse:
-wall NN ROOT
+is VBZ ROOT
  +-- boy NN nsubj
  |   +-- A DT det
  |   +-- in IN prep
  |       +-- shirt NN pobj
  |           +-- a DT det
  |           +-- red JJ amod
- +-- is VBZ cop
  +-- in IN prep
  |   +-- front JJ pobj
- +-- a DT det
+ |       +-- wall NN pobj
+ |           +-- a DT det
+ |           +-- , , punct
+ |           +-- is VBZ cop
+ |               +-- which WDT nsubj
+ |               +-- long JJ rcmod
+ |               +-- and CC cc
+ |               +-- blue JJ conj
  +-- , , punct
- +-- long JJ rcmod
-     +-- which WDT nsubj
-     +-- is VBZ cop
-     +-- and CC cc
-     +-- blue JJ conj
-     +-- , , punct
-     +-- and CC cc
-     +-- raising VBG conj
-         +-- is VBZ aux
-         +-- suspiciously RB advmod
-         +-- eyebrow NN dobj
-         |   +-- an DT det
-         +-- at IN prep
-             +-- camera NN pobj
-                 +-- the DT det
+ +-- and CC cc
+ +-- raising VBG conj
+     +-- is VBZ aux
+     +-- suspiciously RB advmod
+     +-- eyebrow NN dobj
+     |   +-- an DT det
+     +-- at IN prep
+         +-- camera NN pobj
+             +-- the DT det
 Input: A boy is standing in front of the blue building in the space reserved for handicapped people
 Parse:
 standing VBG ROOT
@@ -59442,10 +59445,10 @@ wearing VBG ROOT
              +-- the DT det
 Input: A girl is naked and is standing on the grass
 Parse:
-naked JJ ROOT
+is VBZ cop
  +-- girl NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- naked JJ acomp
  +-- and CC cc
  +-- standing VBG conj
      +-- is VBZ aux
@@ -61094,10 +61097,10 @@ screaming VBG ROOT
  +-- is VBZ aux
 Input: A man is scared
 Parse:
-scared JJ ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- scared JJ acomp
 Input: A man is screaming
 Parse:
 screaming VBG ROOT
@@ -62610,20 +62613,20 @@ pushed VBN ROOT
                  +-- a DT det
 Input: One man is powering the microwave
 Parse:
-man NN ROOT
- +-- One CD num
- +-- powering VBG dep
-     +-- is VBZ aux
-     +-- microwave NN dobj
-         +-- the DT det
+powering VBG ROOT
+ +-- man NN nsubj
+     +-- One CD num
+ +-- is VBZ aux
+ +-- microwave NN dobj
+     +-- the DT det
 Input: One man is powering the microwave
 Parse:
-man NN ROOT
- +-- One CD num
- +-- powering VBG dep
-     +-- is VBZ aux
-     +-- microwave NN dobj
-         +-- the DT det
+powering VBG ROOT
+ +-- man NN nsubj
+     +-- One CD num
+ +-- is VBZ aux
+ +-- microwave NN dobj
+     +-- the DT det
 Input: One man is turning off the microwave
 Parse:
 turning VBG ROOT
@@ -63243,10 +63246,10 @@ talking VBG ROOT
          +-- the DT det
 Input: The parrot is silent in front of the microphone
 Parse:
-silent JJ ROOT
+is VBZ ROOT
  +-- parrot NN nsubj
  |   +-- The DT det
- +-- is VBZ cop
+ +-- silent JJ acomp
  +-- in IN prep
      +-- front NN pobj
          +-- of IN prep
@@ -64441,7 +64444,7 @@ given VBN ROOT
          +-- the DT det
 Input: Some milk is being hungrily drunk by a cat
 Parse:
-drunk JJ ROOT
+drunk VBZ ROOT
  +-- milk NN nsubj
  |   +-- Some DT det
  +-- is VBZ aux
@@ -66216,12 +66219,12 @@ singing VBG ROOT
  +-- are VBP aux
 Input: A group of people is silent
 Parse:
-silent JJ ROOT
+is VBZ ROOT
  +-- group NN nsubj
  |   +-- A DT det
  |   +-- of IN prep
  |       +-- people NNS pobj
- +-- is VBZ cop
+ +-- silent JJ acomp
 Input: Some persons are singing
 Parse:
 singing VBG ROOT
@@ -66230,10 +66233,10 @@ singing VBG ROOT
  +-- are VBP aux
 Input: Some people are silent
 Parse:
-silent JJ ROOT
+are VBP ROOT
  +-- people NNS nsubj
  |   +-- Some DT det
- +-- are VBP cop
+ +-- silent JJ acomp
 Input: A group of people is singing
 Parse:
 singing VBG ROOT
@@ -66244,12 +66247,12 @@ singing VBG ROOT
  +-- is VBZ aux
 Input: A group of people is silent
 Parse:
-silent JJ ROOT
+is VBZ ROOT
  +-- group NN nsubj
  |   +-- A DT det
  |   +-- of IN prep
  |       +-- people NNS pobj
- +-- is VBZ cop
+ +-- silent JJ acomp
 Input: A man is playing a trumpet
 Parse:
 playing VBG ROOT
@@ -66321,16 +66324,16 @@ playing VBG ROOT
      +-- a DT det
 Input: A man is motionless
 Parse:
-motionless JJ ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- motionless JJ acomp
 Input: A man is silent
 Parse:
-silent JJ ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- silent JJ acomp
 Input: A man is talking
 Parse:
 talking VBG ROOT
@@ -66345,10 +66348,10 @@ dancing VBG ROOT
  +-- is VBZ aux
 Input: A man is motionless
 Parse:
-motionless JJ ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- motionless JJ acomp
 Input: A panda is climbing
 Parse:
 climbing VBG ROOT
@@ -67315,7 +67318,7 @@ boiling VBG ROOT
  +-- noodles NNS dobj
 Input: The man is not kick boxing with a trainer
 Parse:
-boxing NN ROOT
+boxing VBG ROOT
  +-- man NN nsubj
  |   +-- The DT det
  +-- is VBZ cop

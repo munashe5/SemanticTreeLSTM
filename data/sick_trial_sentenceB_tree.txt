@@ -343,7 +343,20 @@ putting VBG ROOT
          +-- extravagant JJ amod
 Input: A little boy , who looks fearful , is on a climbing wall .
 Parse:
-. . ROOT
+is VBZ ROOT
+ +-- boy NN nsubj
+ |   +-- A DT det
+ |   +-- little JJ amod
+ |   +-- , , punct
+ |   +-- looks VBZ rcmod
+ |   |   +-- who WP nsubj
+ |   |   +-- fearful JJ acomp
+ |   +-- , , punct
+ +-- on IN prep
+ |   +-- wall NN pobj
+ |       +-- a DT det
+ |       +-- climbing NN nn
+ +-- . . punct
 Input: The man is tossing a kid into the swimming pool that is near the ocean
 Parse:
 tossing VBG ROOT
@@ -400,23 +413,23 @@ looking VBG ROOT
          +-- a DT det
 Input: A dog next to a tree , which is probably a pine , is biting a bucket
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- next RB advmod
- |   +-- to IN prep
- |       +-- tree NN pobj
- |           +-- a DT det
- |           +-- , , punct
- |           +-- pine NN rcmod
- |               +-- which WDT nsubj
- |               +-- is VBZ cop
- |               +-- probably RB advmod
- |               +-- a DT det
- +-- , , punct
- +-- biting VBG dep
-     +-- is VBZ aux
-     +-- bucket NN dobj
-         +-- a DT det
+biting VBG ROOT
+ +-- dog NN nsubj
+ |   +-- A DT det
+ |   +-- next JJ amod
+ |   |   +-- to IN prep
+ |   |       +-- tree NN pobj
+ |   |           +-- a DT det
+ |   |           +-- , , punct
+ |   |           +-- is VBZ rcmod
+ |   |               +-- which WDT nsubj
+ |   |               +-- probably RB advmod
+ |   |               +-- pine NN attr
+ |   |                   +-- a DT det                 
+ |   +-- , , punct
+ +-- is VBZ aux
+ +-- bucket NN dobj
+     +-- a DT det
 Input: A few men in a competition are running indoors
 Parse:
 running VBG ROOT
@@ -490,36 +503,36 @@ equipped VBN ROOT
                  +-- protection NN pobj
 Input: A dog , which has a black coat , and a white dog are running on the grass
 Parse:
-dog NN ROOT
- +-- A DT det
- +-- , , punct
- +-- has VBZ rcmod
-     +-- which WDT nsubj
-     +-- coat NN dobj
-     |   +-- a DT det
-     |   +-- black JJ amod
-     +-- , , punct
-     +-- and CC cc
-     +-- running VBG conj
-         +-- dog NN nsubj
-         |   +-- a DT det
-         |   +-- white JJ amod
-         +-- are VBP aux
-         +-- on IN prep
-             +-- grass NN pobj
-                 +-- the DT det
+running VBG conj
+ +-- dog NN nsubj
+ |   +-- A DT det
+ |   +-- , , punct
+ |   +-- has VBZ rcmod
+ |   |   +-- which WDT nsubj
+ |   |   +-- coat NN dobj
+ |   |   |   +-- a DT det
+ |   |   |   +-- black JJ amod
+ |   |   +-- , , punct
+ |   +-- and CC cc
+ |       +-- dog NN nsubj
+ |       |   +-- a DT det
+ |       |   +-- white JJ amod
+ +-- are VBP aux
+ +-- on IN prep
+     +-- grass NN pobj
+         +-- the DT det
 Input: An ice skating rink placed outdoors is full of people
 Parse:
-full JJ ROOT
+is VBZ ROOT
  +-- rink NN nsubj
  |   +-- An DT det
  |   +-- skating NN nn
  |   |   +-- ice NN nn
- |   +-- placed VBD partmod
+ |   +-- placed VBD vmod
  |       +-- outdoors RB advmod
- +-- is VBZ cop
- +-- of IN prep
-     +-- people NNS pobj
+ +-- full JJ amod
+     +-- of IN prep
+         +-- people NNS pobj
 Input: The girl is cheering the man in the blue and white uniform
 Parse:
 cheering VBG ROOT
@@ -776,10 +789,10 @@ chopping VBG ROOT
      +-- an DT det
 Input: A man is scared
 Parse:
-scared JJ ROOT
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- A DT det
- +-- is VBZ cop
+ +-- scared JJ acomp
 Input: A man is screaming
 Parse:
 screaming VBG ROOT
@@ -3617,14 +3630,16 @@ pushing VBG ROOT
      +-- is VBZ aux
 Input: There is no brown dog running through tall green grass
 Parse:
-dog NN ROOT
- +-- no DT det
- +-- brown JJ amod
- +-- running VBG partmod
-     +-- through IN prep
-         +-- grass NN pobj
-             +-- tall JJ amod
-             +-- green JJ amod
+is VBZ ROOT
+ +-- There DT expl
+ +-- dog NN nsubj
+     +-- no DT det
+     +-- brown JJ amod
+     +-- running VBG partmod
+         +-- through IN prep
+             +-- grass NN pobj
+                 +-- tall JJ amod
+                 +-- green JJ amod
 Input: A woman is wearing a blue shirt with a white vest and a white cap and is talking and marching
 Parse:
 wearing VBG ROOT
@@ -4346,45 +4361,45 @@ playing VBG ROOT
              +-- a DT det
 Input: Four athletes are with a woman in a crowded stadium
 Parse:
-athletes NNS ROOT
- +-- Four CD num
- +-- are VBP dep
+are VBP ROOT
+ +-- athletes NNS nsubj
+     +-- Four CD num
      +-- with IN prep
          +-- woman NN pobj
              +-- a DT det
-             +-- in IN prep
-                 +-- stadium NN pobj
-                     +-- a DT det
-                     +-- crowded JJ amod
+ +-- in IN prep
+     +-- stadium NN pobj
+         +-- a DT det
+         +-- crowded JJ amod
 Input: A woman dressed in elegant clothing is inside a crowd of people and is looking down
 Parse:
-crowd NN ROOT
+is VBZ ROOT
  +-- woman NN nsubj
  |   +-- A DT det
  |   +-- dressed VBN partmod
  |       +-- in IN prep
  |           +-- clothing NN pobj
  |               +-- elegant JJ amod
- +-- is VBZ cop
  +-- inside IN advmod
- +-- a DT det
- +-- of IN prep
- |   +-- people NNS pobj
+ |   +-- crowd NN pboj
+ |       +-- a DT det
+ |       +-- of IN prep
+ |           +-- people NNS pobj
  +-- and CC cc
  +-- looking VBG conj
      +-- is VBZ aux
      +-- down RP advmod
 Input: An elegant woman is inside a crowd of people and is looking down
 Parse:
-crowd NN ROOT
+is VBZ ROOT
  +-- woman NN nsubj
  |   +-- An DT det
  |   +-- elegant JJ amod
- +-- is VBZ cop
  +-- inside IN advmod
- +-- a DT det
- +-- of IN prep
- |   +-- people NNS pobj
+ +-- crowd NN pobj
+     +-- a DT det
+     +-- of IN prep
+     |   +-- people NNS pobj
  +-- and CC cc
  +-- looking VBG conj
      +-- is VBZ aux
@@ -4810,7 +4825,7 @@ climbing VBG ROOT
              +-- the DT det
 Input: A man is rock climbing , stopping and calculating the route
 Parse:
-climbing NN ROOT
+climbing VBG ROOT
  +-- man NN nsubj
  |   +-- A DT det
  +-- is VBZ cop
