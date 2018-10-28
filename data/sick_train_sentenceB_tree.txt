@@ -6538,7 +6538,7 @@ lying VBG ROOT
          +-- the DT det
 Input: A girl is naked and is standing on the grass
 Parse:
-is VBZ cop
+is VBZ ROOT
  +-- girl NN nsubj
  |   +-- A DT det
  +-- naked JJ acomp
@@ -24099,7 +24099,7 @@ putting VBG ROOT
          +-- a DT det
 Input: A man is sprinkling shredded cheese on a pizza
 Parse:
-sprinkling VBG dep
+sprinkling VBG ROOT
  +-- man NN nsubj
      +-- A DT det
  +-- is VBZ aux
@@ -33225,7 +33225,7 @@ flying VBG ROOT
          +-- some DT det
 Input: A large stream is full of rocks , ducks and flies
 Parse:
-is VBZ cop
+is VBZ ROOT
  +-- stream NN nsubj
  |   +-- A DT det
  |   +-- large JJ amod
@@ -54659,7 +54659,7 @@ sitting VBG ROOT
          +-- a DT det
 Input: A sitting man is busy writing something in an area covered by paint
 Parse:
-is VBZ cop
+is VBZ ROOT
  +-- man NN nsubj
  |   +-- A DT det
  |   +-- sitting VBG amod
@@ -57949,7 +57949,7 @@ climbing VBG ROOT
          +-- rock NN pobj
 Input: A dog , which has a black coat , and a white dog are running on the grass
 Parse:
-running VBG conj
+running VBG ROOT
  +-- dog NN nsubj
  |   +-- A DT det
  |   +-- , , punct
@@ -59445,7 +59445,7 @@ wearing VBG ROOT
              +-- the DT det
 Input: A girl is naked and is standing on the grass
 Parse:
-is VBZ cop
+is VBZ ROOT
  +-- girl NN nsubj
  |   +-- A DT det
  +-- naked JJ acomp
